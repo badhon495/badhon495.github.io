@@ -1,3 +1,18 @@
+body.dark-mode {
+  background: #24273a;
+  color: #cad3f5;
+}
+
+body.dark-mode a {
+  color: #8aadf4;
+}
+
+body.dark-mode a:focus,
+body.dark-mode a:hover {
+  color: #f09228;
+}
+
+
 i{
   font-size: 40px;
   cursor: pointer;
@@ -100,7 +115,7 @@ strong {
   font-size: 14px;
 }
 
-heading {
+h2 {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 22px;
 }
@@ -139,4 +154,21 @@ name {
 
 span.highlight {
   background-color: #ffffd0;
+}
+
+ul.extra_gap {
+  list-style-type: disc;
+}
+
+ul.extra_gap li {
+  margin-bottom: 5px; /* Adjust spacing between list items */
+}
+
+.section {
+  width: 100%;
+  border: 0px;
+  border-spacing: 0px;
+  border-collapse: separate;
+  margin-right: auto;
+  margin-left: auto;
 }
