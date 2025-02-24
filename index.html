@@ -10,8 +10,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<link rel="stylesheet" type="text/css" href="popup.css">
 
 	<script src="dark_mode.js" defer></script>
+	<script src="popup.js" defer></script>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
 
 	<!-- for google crawling -->
@@ -58,7 +60,7 @@
 										<a href="#Academic_Project">Academic Project</a> <br>
 										<a href="#Service">Service</a> &nbsp;/&nbsp;
 										<a href="#Miscellaneous">Miscellaneous</a> &nbsp;/&nbsp;
-										<a href="https://forms.gle/qMk89jaiRsTJsmos9">Anonymous Message</a>
+										<a href="#" id="anonymousMessageLink">Anonymous Message</a>
 								</td>
 								<td style="padding:2.5%;width:40%;max-width:40%">
 									<a href="images/badhon_profilePic.jpeg"><img
@@ -409,63 +411,30 @@
 						</tbody>
 					</table>
 
-					<table class="section">
-						<tbody>
-							<tr>
-								<td style="padding:20px;width:100%;vertical-align:middle">
-									<h2 id="Miscellaneous">Temporary CSE391 Stuff</h2>
-									<p style="text-align: justify;">
-
-
-									<ul>
-										<li><b>CSE391 Discord Server <a
-													href="https://discord.gg/KrE9RWSK">Link</a></b>
-											[Spring 2025]<br>
-											<ul>
-												<li>It is a month-long celebration of open source software run by
-													DigitalOcean in partnership with GitHub and Twilio.</li>
-												<li>Completion <a
-														href="https://www.holopin.io/hacktoberfest2023/hall/@badhon495">Badge</a>
-													of Hacktoberfest.</li>
-											</ul>
-										</li>
-									</ul>
-
-									<ul>
-										<li><b>Participeted <a
-													href="https://tryhackme.com/room/adventofcyber2023">Advent of
-													Cyber</a></b>
-											[2023]<br>
-											<ul>
-												<li>It is a 24 days beginner friendly security challenge.</li>
-												<li>Completion <a
-														href="https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-5EONDITDAJ.png">Certificate</a>
-													of Advent of Cyber 2023.</li>
-											</ul>
-										</li>
-									</ul>
-
-									<ul>
-										<li><b>Passed <a
-											href="https://docs.github.com/en/get-started/showcase-your-expertise-with-github-certifications/about-github-certifications#github-foundations-certification">GitHub Foundations</a> Exam</b>
-									[2024]<br>
-									<ul>
-										<li>It verifies skills in collaboration, GitHub products, Git basics, and working within GitHub repositories.</li>
-										<li>Completion <a
-												href="https://www.credly.com/badges/d5c30c19-02db-4c5f-9bc9-4bd0f4b6a89e/public_url"> Badge </a>of The Exam.</li>
-									</ul>
-								</li>
-									</ul>
-
-									
-								</td>
-							</tr>
-						</tbody>
-					</table>
-
-
-
-
+					<div class="popup-overlay">
+						<div class="popup-content">
+							<span class="popup-close">&times;</span>
+							<h2>Anonymous Message</h2>
+							<form action="https://formsubmit.co/ajax/badhon495@gmail.com" method="post">
+								<input type="hidden" name="_captcha" value="false">
+								<div class="form-group">
+									<label for="popup-name">Name (required)</label>
+									<input type="text" id="popup-name" name="name" placeholder="Any name you want me to call you" required>
+								</div>
+								<div class="form-group">
+									<label for="popup-email">Email</label>
+									<input type="email" id="popup-email" name="email" placeholder="If you want me to reply">
+								</div>
+								<div class="form-group">
+									<label for="popup-message">Message (required)</label>
+									<textarea id="popup-message" name="message" placeholder="Say all the things you want" required></textarea>
+								</div>
+								<div class="form-group">
+									<input type="submit" value="Sent">
+								</div>
+							</form>
+						</div>
+					</div>
 
 					<table class = "section">
 						<tbody>
