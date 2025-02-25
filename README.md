@@ -9,10 +9,11 @@ Repository Link: [https://github.com/jonbarron/website](https://github.com/jonba
 
 - Fast and responsive because it only uses HTML, CSS, and a little bit of JavaScript  
 - Easy to customize and understand  
-- Supports both dark and light mode  
+- Supports both dark and light mode
+- Has the last update time for a reality check
 - Includes a built-in form powered by [FormSubmit](https://formsubmit.io)  
 
-## Usage
+## Use
 
 1. Fork the repository  
 2. Go to the repository settings and set the GitHub Pages source to the `main` branch  
