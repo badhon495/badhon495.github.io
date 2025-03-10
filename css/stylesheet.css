@@ -120,37 +120,6 @@ h2 {
   font-size: 22px;
 }
 
-papertitle {
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 14px;
-  font-weight: 700
-}
-
-name {
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 32px;
-}
-
-.one {
-  width: 160px;
-  height: 160px;
-  position: relative;
-}
-
-.two {
-  width: 160px;
-  height: 160px;
-  position: absolute;
-  transition: opacity .2s ease-in-out;
-  -moz-transition: opacity .2s ease-in-out;
-  -webkit-transition: opacity .2s ease-in-out;
-}
-
-.fade {
-  transition: opacity .2s ease-in-out;
-  -moz-transition: opacity .2s ease-in-out;
-  -webkit-transition: opacity .2s ease-in-out;
-}
 
 span.highlight {
   background-color: #ffffd0;
@@ -171,4 +140,15 @@ ul.extra_gap li {
   border-collapse: separate;
   margin-right: auto;
   margin-left: auto;
+}
+
+.sub-section {
+  padding: 20px;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.footer-section {
+  padding: 1px; 
+  margin: 1px;
 }
