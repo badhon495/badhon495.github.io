@@ -19,3 +19,4 @@ Repository Link: [https://github.com/jonbarron/website](https://github.com/jonba
 2. Go to the repository settings and set the GitHub Pages source to the `main` branch  
 3. Edit the `index.html` file to include your information  
 4. Remove Google Analytics and FormSubmit code from the `index.html` file or replace it with your own.
+5. Remove "cse391" folder as it is done for my course project.
