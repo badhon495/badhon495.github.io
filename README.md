@@ -1,6 +1,19 @@
 # Portfolio Md Sakib Sadman Badhon
 
-Portfolio Site: [https://badhon495.github.io](https://badhon495.github.io)
+## ⚠️ **IMPORTANT WARNING** ⚠️
+
+<div align="center">
+<h2 style="color: red; font-size: 24px;">
+🚨 THIS IS THE DEPLOYED VERSION OF MY PORTFOLIO WEBSITE 🚨
+</h2>
+<h3 style="color: red;">
+DO NOT COPY IT AS IT CONTAINS GOOGLE ANALYTICS AND OTHER PERSONAL CONFIGURATIONS THAT ARE NOT MEANT TO BE COPIED!
+</h3>
+</div>
+
+---
+
+**Portfolio Site:** [https://badhon495.github.io](https://badhon495.github.io)
 
 Inspired by: Jon Barron  
 Repository Link: [https://github.com/jonbarron/website](https://github.com/jonbarron/website)
