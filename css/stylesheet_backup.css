@@ -110,6 +110,19 @@ a {
   font-size: 14px
 }
 
+/* Prevent horizontal scrolling */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure all content stays within viewport */
+* {
+  box-sizing: border-box;
+}
+
 strong {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 14px;
@@ -153,8 +166,41 @@ ul.extra_gap li {
   margin: 1px;
 }
 
-/* Only minimal responsive fixes for profile section and dark mode toggle */
+/* Responsive Design Fixes */
 @media screen and (max-width: 768px) {
+  /* Mobile-specific styles */
+  .section {
+    max-width: 100% !important;
+    padding: 0 10px;
+  }
+  
+  .sub-section {
+    padding: 15px 10px;
+  }
+  
+  /* Stack profile layout vertically on small screens */
+  table.section tr td {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center;
+  }
+  
+  /* Adjust profile image for mobile */
+  td img {
+    max-width: 200px !important;
+    margin: 20px auto;
+  }
+  
+  /* Adjust font sizes for mobile */
+  .name {
+    font-size: 2em !important;
+  }
+  
+  span[style*="font-size: 2em"] {
+    font-size: 1.5em !important;
+  }
+  
   /* Fix dark mode toggle position on mobile */
   i {
     top: 15px !important;
@@ -162,8 +208,30 @@ ul.extra_gap li {
     transform: none !important;
     font-size: 30px !important;
   }
+}
+
+/* Fix viewport meta tag behavior */
+@media screen and (orientation: landscape) and (max-height: 600px) {
+  .section {
+    padding: 10px;
+  }
   
-  /* Profile section specific mobile adjustments */
+  .sub-section {
+    padding: 10px;
+  }
+  
+  i {
+    font-size: 25px !important;
+  }
+}
+
+/* Profile section specific styles */
+.profile-section {
+  display: block;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
   .profile-section tr {
     display: flex;
     flex-direction: column;
@@ -191,7 +259,7 @@ ul.extra_gap li {
   }
 }
 
-/* Ensure profile section works properly on desktop */
+/* Ensure consistent table behavior across devices */
 @media screen and (min-width: 769px) {
   .profile-section tr {
     display: table-row;
@@ -207,25 +275,5 @@ ul.extra_gap li {
     display: table-cell;
     width: 37%;
     vertical-align: middle;
-  }
-}
-
-/* Flexible image sizing */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Improve popup responsiveness */
-@media screen and (max-width: 480px) {
-  .popup-content {
-    width: 90% !important;
-    max-width: 300px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .popup-content h2 {
-    font-size: 20px;
   }
 }
