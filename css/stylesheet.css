@@ -110,6 +110,19 @@ a {
   font-size: 14px
 }
 
+/* Prevent horizontal scrolling */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure all content stays within viewport */
+* {
+  box-sizing: border-box;
+}
+
 strong {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 14px;
@@ -135,11 +148,13 @@ ul.extra_gap li {
 
 .section {
   width: 100%;
+  max-width: 800px;
   border: 0px;
   border-spacing: 0px;
   border-collapse: separate;
   margin-right: auto;
   margin-left: auto;
+  padding: 0 10px;
 }
 
 .sub-section {
@@ -227,5 +242,38 @@ img {
   
   .popup-content h2 {
     font-size: 20px;
+  }
+}
+
+/* Prevent long URLs from causing horizontal scroll */
+a {
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Ensure tables don't exceed container width */
+table {
+  table-layout: fixed;
+  word-wrap: break-word;
+}
+
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 800px) {
+  .section {
+    padding: 0 15px;
+  }
+  
+  .sub-section {
+    padding: 15px 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .section {
+    padding: 0 10px;
+  }
+  
+  .sub-section {
+    padding: 10px 5px;
   }
 }
