@@ -12,6 +12,9 @@
 
 	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 	<link rel="stylesheet" type="text/css" href="css/mail.css">
+	
+	<!-- Preload critical image -->
+	<link rel="preload" as="image" href="images/badhon_profilePic_optimized.webp">
 
 	<script src="js/dark_mode.js" defer></script>
 	<script src="js/mail.js" defer></script>
@@ -62,13 +65,17 @@
 										<a href="#Service">Service</a> &nbsp;/&nbsp;
 										<a href="#Miscellaneous">Miscellaneous</a> &nbsp;/&nbsp;
 										<a href="#" id="anonymousMessageLink">Anonymous Message</a>
-								</td>
-								<td style="padding:2.5%;width:40%;max-width:40%" class="profile-image">
-									<a href="images/badhon_profilePic.webp"><img
-											style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;"
-											alt="profile photo" src="images/badhon_profilePic.webp"
-											class="hoverZoomLink"></a>
-								</td>
+								</td>							<td style="padding:2.5%;width:40%;max-width:40%" class="profile-image">
+								<a href="images/badhon_profilePic_optimized.webp"><img
+										style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;"
+										alt="profile photo of Md Sakib Sadman Badhon" 
+										src="images/badhon_profilePic_optimized.webp"
+										class="hoverZoomLink"
+										loading="eager"
+										decoding="async"
+										width="400"
+										height="400"></a>
+							</td>
 							</tr>
 						</tbody>
 					</table>
