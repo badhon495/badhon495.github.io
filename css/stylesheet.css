@@ -1,14 +1,19 @@
-body.dark-mode {
+html.dark-mode {
   background: #24273a;
   color: #cad3f5;
 }
 
-body.dark-mode a {
+html.dark-mode body {
+  background: #24273a;
+  color: #cad3f5;
+}
+
+html.dark-mode a {
   color: #8aadf4;
 }
 
-body.dark-mode a:focus,
-body.dark-mode a:hover {
+html.dark-mode a:focus,
+html.dark-mode a:hover {
   color: #f09228;
 }
 
