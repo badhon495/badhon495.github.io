@@ -17,6 +17,19 @@ html.dark-mode a:hover {
   color: #f09228;
 }
 
+/* Footer Styles */
+footer {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+html.dark-mode footer {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+html.dark-mode footer p {
+  color: #cad3f5;
+}
+
 
 /* Dark mode toggle button */
 #toggleDark {
@@ -119,7 +132,7 @@ tr,
 p,
 a {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 14px
+  font-size: 16px
 }
 
 /* Prevent horizontal scrolling */
@@ -130,6 +143,11 @@ html, body {
   padding: 0;
 }
 
+/* Add padding to body to account for fixed navbar */
+body {
+  padding-top: 48px;
+}
+
 /* Ensure all content stays within viewport */
 * {
   box-sizing: border-box;
@@ -137,12 +155,13 @@ html, body {
 
 strong {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 h2 {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 22px;
+  font-size: 28px;
+  font-weight: bold;
 }
 
 
@@ -170,7 +189,6 @@ ul.extra_gap li {
 }
 
 .sub-section {
-  padding: 20px;
   width: 100%;
   vertical-align: middle;
 }
@@ -279,6 +297,186 @@ table {
   }
 }
 
+/* Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 0;
+  margin: 0;
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar.navbar-hidden {
+  transform: translateY(-100%);
+}
+
+html.dark-mode .navbar {
+  background: rgba(36, 39, 58, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 8px;
+}
+
+.navbar a {
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  font-size: 0.9em;
+  white-space: nowrap;
+}
+
+.navbar a:hover {
+  background: rgba(138, 173, 244, 0.2);
+  transform: translateY(-2px);
+}
+
+html.dark-mode .navbar a:hover {
+  background: rgba(138, 173, 244, 0.15);
+}
+
+.navbar-separator {
+  color: #999;
+  margin: 0 5px;
+}
+
+html.dark-mode .navbar-separator {
+  color: #6e738d;
+}
+
+/* Hamburger menu button */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: #1772d0;
+  margin: 3px 0;
+  transition: all 0.3s ease;
+  border-radius: 3px;
+}
+
+html.dark-mode .hamburger span {
+  background-color: #8aadf4;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Mobile menu */
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+  padding: 10px 0;
+  z-index: 999;
+}
+
+html.dark-mode .mobile-menu {
+  background: rgba(36, 39, 58, 0.98);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-menu.active {
+  display: flex;
+}
+
+.mobile-menu a {
+  padding: 12px 20px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+html.dark-mode .mobile-menu a {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mobile-menu a:hover {
+  background: rgba(138, 173, 244, 0.1);
+}
+
+@media screen and (max-width: 1024px) {
+  .hamburger {
+    display: flex;
+    order: 10;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+  
+  .nav-desktop {
+    display: none !important;
+  }
+  
+  .navbar-container {
+    padding: 10px 15px;
+    gap: 0;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .navbar a {
+    padding: 5px 8px;
+    font-size: 0.85em;
+    flex: 1;
+    text-align: center;
+    white-space: nowrap;
+  }
+  
+  .navbar a:not(.nav-desktop) {
+    flex: 1;
+  }
+  
+  .navbar-separator {
+    display: none;
+  }
+  
+  body {
+    padding-top: 50px;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .section {
     padding: 0 10px;
@@ -286,5 +484,18 @@ table {
   
   .sub-section {
     padding: 10px 5px;
+  }
+  
+  .navbar-container {
+    padding: 10px 15px;
+  }
+  
+  .navbar a {
+    padding: 6px 12px;
+    font-size: 0.85em;
+  }
+  
+  body {
+    padding-top: 50px;
   }
 }

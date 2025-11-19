@@ -2,13 +2,25 @@ document.addEventListener('DOMContentLoaded', function () {
     const popupOverlay = document.querySelector('.popup-overlay');
     const popupClose = document.querySelector('.popup-close');
     const anonymousMessageLink = document.querySelector('#anonymousMessageLink');
+    const anonymousMessageFooterLink = document.querySelector('#anonymousMessageFooterLink');
     const form = document.querySelector('.popup-content form');
     const submitButton = form.querySelector('input[type="submit"]');
 
-    anonymousMessageLink.addEventListener('click', function (event) {
-        event.preventDefault();
-        popupOverlay.style.display = 'flex';
-    });
+    // Handle click for profile section link
+    if (anonymousMessageLink) {
+        anonymousMessageLink.addEventListener('click', function (event) {
+            event.preventDefault();
+            popupOverlay.style.display = 'flex';
+        });
+    }
+
+    // Handle click for footer link
+    if (anonymousMessageFooterLink) {
+        anonymousMessageFooterLink.addEventListener('click', function (event) {
+            event.preventDefault();
+            popupOverlay.style.display = 'flex';
+        });
+    }
 
     popupClose.addEventListener('click', function () {
         popupOverlay.style.display = 'none';
