@@ -377,11 +377,20 @@ html.dark-mode .navbar {
 /* Remove selection/focus outline */
 .navbar a:focus {
   outline: none;
+  background: transparent;
 }
 
 .navbar a:focus-visible {
   outline: 2px solid #1772d0;
   outline-offset: 2px;
+}
+
+/* Prevent tap highlight on mobile */
+.navbar a {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 html.dark-mode .navbar a:hover {
@@ -491,11 +500,20 @@ html.dark-mode .mobile-menu a.active-section {
 /* Remove selection/focus outline for mobile menu */
 .mobile-menu a:focus {
   outline: none;
+  background: transparent;
 }
 
 .mobile-menu a:focus-visible {
   outline: 2px solid #1772d0;
   outline-offset: 2px;
+}
+
+/* Prevent tap highlight on mobile */
+.mobile-menu a {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 /* Remove hover state on touch devices to prevent persistent highlighting */
@@ -506,6 +524,21 @@ html.dark-mode .mobile-menu a.active-section {
   
   .mobile-menu a:active {
     background: rgba(138, 173, 244, 0.15);
+  }
+  
+  .navbar a:hover {
+    background: transparent;
+    transform: none;
+  }
+  
+  .navbar a:active {
+    background: rgba(138, 173, 244, 0.15);
+  }
+  
+  /* Ensure active section styling still works */
+  .navbar a.active-section:hover,
+  .mobile-menu a.active-section:hover {
+    background: rgba(138, 173, 244, 0.2);
   }
 }
 
