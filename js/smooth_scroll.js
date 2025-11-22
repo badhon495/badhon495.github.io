@@ -1,6 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Get all anchor links that point to sections (except Bio which is handled separately)
     const sectionLinks = document.querySelectorAll('a[href^="#"]:not([href="#Bio"])');
+    const navbar = document.querySelector('.navbar');
+    
+    // Cache navbar height to avoid forced reflow - read once at load
+    let navbarHeight = 48; // Default fallback
+    if (navbar) {
+        // Read layout property only once during initialization
+        navbarHeight = navbar.offsetHeight;
+    }
     
     sectionLinks.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -13,8 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const targetElement = document.getElementById(targetId);
             
             if (targetElement) {
-                // Calculate the offset for the fixed navbar
-                const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                // Use cached navbar height to avoid forced reflow
                 const elementPosition = targetElement.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.scrollY - navbarHeight - 20;
                 const startPosition = window.scrollY;

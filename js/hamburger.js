@@ -36,17 +36,23 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
         
-        // Handle viewport changes (desktop mode toggle)
-        let viewportWidth = window.innerWidth;
-        window.addEventListener('resize', function() {
-            const newWidth = window.innerWidth;
-            
-            // If viewport significantly changed (desktop mode toggled), close mobile menu
-            if (Math.abs(newWidth - viewportWidth) > 100) {
+        // Handle viewport changes (desktop mode toggle) - use matchMedia to avoid forced reflow
+        const mobileBreakpoint = window.matchMedia('(max-width: 1024px)');
+        
+        function handleViewportChange(e) {
+            // Close mobile menu when switching from mobile to desktop view
+            if (!e.matches) {
                 hamburger.classList.remove('active');
                 mobileMenu.classList.remove('active');
-                viewportWidth = newWidth;
             }
-        });
+        }
+        
+        // Modern approach using matchMedia listener (no forced reflow)
+        if (mobileBreakpoint.addEventListener) {
+            mobileBreakpoint.addEventListener('change', handleViewportChange);
+        } else {
+            // Fallback for older browsers
+            mobileBreakpoint.addListener(handleViewportChange);
+        }
     }
 });

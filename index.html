@@ -24,12 +24,17 @@
 	<meta name="description"
 		content="Explore the portfolio of Md Sakib Sadman Badhon, a passionate Computer Science student from Bangladesh specializing in Cybersecurity, Machine Learning, Cloud Computing, and Web Development. Discover detailed project showcases, technical skills, certifications, and professional experiences in web development, decentralized apps, and more.">
 
+	<!-- Preconnect to external domains -->
+	<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+	<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+	
 	<!-- Preload critical resources -->
-	<link rel="preload" href="css/stylesheet.css" as="style">
+	<link rel="preload" href="css/stylesheet.min.css" as="style">
 	<link rel="preload" href="https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wXiWtFCc.woff2" as="font" type="font/woff2" crossorigin>
 	
-	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-	<link rel="stylesheet" type="text/css" href="css/mail.css">
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.min.css">
+	<link rel="stylesheet" type="text/css" href="css/mail.css" media="print" onload="this.media='all'">
+	<noscript><link rel="stylesheet" type="text/css" href="css/mail.css"></noscript>
 
 	<!-- Immediate theme detection to prevent flash -->
 	<script>
@@ -50,7 +55,8 @@
 	<script src="js/navbar_active.js" defer></script>
 	<script src="js/bio_scroll.js" defer></script>
 	<script src="js/smooth_scroll.js" defer></script>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" media="print" onload="this.media='all'" />
+	<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" /></noscript>
 
 	<!-- Favicon and App Icons -->
 	<link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -126,16 +132,14 @@
 						<tbody>
 							<tr style="padding:0px">
 								<td style="width:100%;vertical-align:middle;text-align:center;">
-									<!-- Profile Image -->
-									<div style="margin-bottom: 20px;">
-										<a href="images/badhon_profilePic.webp"><img
-												style="width:300px;max-width:100%;object-fit: cover; border-radius: 50%;"
-												alt="profile photo of Md Sakib Sadman Badhon"
-												src="images/badhon_profilePic.webp" class="hoverZoomLink" loading="eager"
-												decoding="async" width="400" height="400"></a>
-									</div>
-									
-									<!-- Name -->
+							<!-- Profile Image -->
+							<div style="margin-bottom: 20px;">
+								<a href="images/badhon_profilePic.webp"><img
+										style="width:300px;max-width:100%;object-fit: cover; border-radius: 50%;"
+										alt="profile photo of Md Sakib Sadman Badhon"
+										src="images/badhon_profilePic.webp" class="hoverZoomLink" loading="eager"
+										decoding="async" width="300" height="300"></a>
+							</div>									<!-- Name -->
 									<p class="name" style="text-align:center; font-size:2.5em; margin-top: 10px; margin-bottom: 5px;">
 										Md Sakib Sadman Badhon
 									</p>
