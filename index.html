@@ -24,6 +24,10 @@
 	<meta name="description"
 		content="Explore the portfolio of Md Sakib Sadman Badhon, a passionate Computer Science student from Bangladesh specializing in Cybersecurity, Machine Learning, Cloud Computing, and Web Development. Discover detailed project showcases, technical skills, certifications, and professional experiences in web development, decentralized apps, and more.">
 
+	<!-- Preload critical resources -->
+	<link rel="preload" href="css/stylesheet.css" as="style">
+	<link rel="preload" href="https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wXiWtFCc.woff2" as="font" type="font/woff2" crossorigin>
+	
 	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 	<link rel="stylesheet" type="text/css" href="css/mail.css">
 
@@ -33,6 +37,8 @@
 		if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
 			document.documentElement.classList.add('dark-mode');
 		}
+		// Prevent FOUC by setting body visibility
+		document.documentElement.style.visibility = 'visible';
 	</script>
 
 	<script src="js/dark_mode.js" defer></script>
