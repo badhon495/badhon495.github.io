@@ -368,8 +368,29 @@ html.dark-mode .navbar {
   transform: translateY(-2px);
 }
 
+.navbar a.active-section {
+  background: rgba(138, 173, 244, 0.3);
+  font-weight: 700;
+  border-bottom: 2px solid #1772d0;
+}
+
+/* Remove selection/focus outline */
+.navbar a:focus {
+  outline: none;
+}
+
+.navbar a:focus-visible {
+  outline: 2px solid #1772d0;
+  outline-offset: 2px;
+}
+
 html.dark-mode .navbar a:hover {
   background: rgba(138, 173, 244, 0.15);
+}
+
+html.dark-mode .navbar a.active-section {
+  background: rgba(138, 173, 244, 0.25);
+  border-bottom-color: #8aadf4;
 }
 
 .navbar-separator {
@@ -454,6 +475,38 @@ html.dark-mode .mobile-menu a {
 
 .mobile-menu a:hover {
   background: rgba(138, 173, 244, 0.1);
+}
+
+.mobile-menu a.active-section {
+  background: rgba(138, 173, 244, 0.2);
+  font-weight: 700;
+  border-left: 4px solid #1772d0;
+  padding-left: 16px;
+}
+
+html.dark-mode .mobile-menu a.active-section {
+  border-left-color: #8aadf4;
+}
+
+/* Remove selection/focus outline for mobile menu */
+.mobile-menu a:focus {
+  outline: none;
+}
+
+.mobile-menu a:focus-visible {
+  outline: 2px solid #1772d0;
+  outline-offset: 2px;
+}
+
+/* Remove hover state on touch devices to prevent persistent highlighting */
+@media (hover: none) and (pointer: coarse) {
+  .mobile-menu a:hover {
+    background: transparent;
+  }
+  
+  .mobile-menu a:active {
+    background: rgba(138, 173, 244, 0.15);
+  }
 }
 
 @media screen and (max-width: 1024px) {
