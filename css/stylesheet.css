@@ -133,6 +133,75 @@ a:hover {
   text-decoration: none;
 }
 
+/* Override global focus/hover for navbar links to prevent orange color */
+.navbar a,
+.navbar a:link,
+.navbar a:visited {
+  color: #1772d0;
+}
+
+.navbar a:focus,
+.navbar a:hover {
+  color: #1772d0 !important;
+  background: transparent !important;
+}
+
+.navbar a:active {
+  background: rgba(138, 173, 244, 0.3) !important;
+  color: #1772d0 !important;
+}
+
+.mobile-menu a,
+.mobile-menu a:link,
+.mobile-menu a:visited {
+  color: #1772d0;
+}
+
+.mobile-menu a:focus,
+.mobile-menu a:hover {
+  color: #1772d0 !important;
+  background: transparent !important;
+}
+
+.mobile-menu a:active {
+  background: rgba(138, 173, 244, 0.2) !important;
+  color: #1772d0 !important;
+}
+
+html.dark-mode .navbar a,
+html.dark-mode .navbar a:link,
+html.dark-mode .navbar a:visited {
+  color: #8aadf4;
+}
+
+html.dark-mode .navbar a:focus,
+html.dark-mode .navbar a:hover {
+  color: #8aadf4 !important;
+  background: transparent !important;
+}
+
+html.dark-mode .navbar a:active {
+  background: rgba(138, 173, 244, 0.25) !important;
+  color: #8aadf4 !important;
+}
+
+html.dark-mode .mobile-menu a,
+html.dark-mode .mobile-menu a:link,
+html.dark-mode .mobile-menu a:visited {
+  color: #8aadf4;
+}
+
+html.dark-mode .mobile-menu a:focus,
+html.dark-mode .mobile-menu a:hover {
+  color: #8aadf4 !important;
+  background: transparent !important;
+}
+
+html.dark-mode .mobile-menu a:active {
+  background: rgba(138, 173, 244, 0.2) !important;
+  color: #8aadf4 !important;
+}
+
 body,
 td,
 th,
@@ -210,6 +279,15 @@ ul.extra_gap li {
 .sub-section {
   width: 100%;
   vertical-align: middle;
+}
+
+/* Section bottom indicators for navbar scroll detection */
+.section-bottom-indicator {
+  position: relative;
+  height: 1px;
+  width: 100%;
+  pointer-events: none;
+  visibility: hidden;
 }
 
 .footer-section {
@@ -377,7 +455,7 @@ html.dark-mode .navbar {
 /* Remove selection/focus outline */
 .navbar a:focus {
   outline: none;
-  background: transparent;
+  color: #1772d0 !important;
 }
 
 .navbar a:focus-visible {
@@ -500,7 +578,7 @@ html.dark-mode .mobile-menu a.active-section {
 /* Remove selection/focus outline for mobile menu */
 .mobile-menu a:focus {
   outline: none;
-  background: transparent;
+  color: #1772d0 !important;
 }
 
 .mobile-menu a:focus-visible {
@@ -523,7 +601,12 @@ html.dark-mode .mobile-menu a.active-section {
   }
   
   .mobile-menu a:active {
-    background: rgba(138, 173, 244, 0.15);
+    background: rgba(138, 173, 244, 0.2) !important;
+    color: #1772d0 !important;
+  }
+  
+  .mobile-menu a:focus {
+    color: #1772d0 !important;
   }
   
   .navbar a:hover {
@@ -532,13 +615,37 @@ html.dark-mode .mobile-menu a.active-section {
   }
   
   .navbar a:active {
-    background: rgba(138, 173, 244, 0.15);
+    background: rgba(138, 173, 244, 0.3) !important;
+    color: #1772d0 !important;
+  }
+  
+  .navbar a:focus {
+    color: #1772d0 !important;
   }
   
   /* Ensure active section styling still works */
   .navbar a.active-section:hover,
   .mobile-menu a.active-section:hover {
-    background: rgba(138, 173, 244, 0.2);
+    background: rgba(138, 173, 244, 0.3);
+  }
+  
+  /* Dark mode colors for touch devices */
+  html.dark-mode .navbar a:active,
+  html.dark-mode .navbar a:focus {
+    color: #8aadf4 !important;
+  }
+  
+  html.dark-mode .navbar a:active {
+    background: rgba(138, 173, 244, 0.25) !important;
+  }
+  
+  html.dark-mode .mobile-menu a:active,
+  html.dark-mode .mobile-menu a:focus {
+    color: #8aadf4 !important;
+  }
+  
+  html.dark-mode .mobile-menu a:active {
+    background: rgba(138, 173, 244, 0.2) !important;
   }
 }
 

@@ -27,14 +27,17 @@
 	<!-- Preconnect to external domains -->
 	<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 	<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-	
+
 	<!-- Preload critical resources -->
 	<link rel="preload" href="css/stylesheet.min.css" as="style">
-	<link rel="preload" href="https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wXiWtFCc.woff2" as="font" type="font/woff2" crossorigin>
-	
+	<link rel="preload" href="https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wXiWtFCc.woff2" as="font"
+		type="font/woff2" crossorigin>
+
 	<link rel="stylesheet" type="text/css" href="css/stylesheet.min.css">
 	<link rel="stylesheet" type="text/css" href="css/mail.css" media="print" onload="this.media='all'">
-	<noscript><link rel="stylesheet" type="text/css" href="css/mail.css"></noscript>
+	<noscript>
+		<link rel="stylesheet" type="text/css" href="css/mail.css">
+	</noscript>
 
 	<!-- Immediate theme detection to prevent flash -->
 	<script>
@@ -55,30 +58,33 @@
 	<script src="js/navbar_active.js" defer></script>
 	<script src="js/bio_scroll.js" defer></script>
 	<script src="js/smooth_scroll.js" defer></script>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" media="print" onload="this.media='all'" />
-	<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" /></noscript>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+		media="print" onload="this.media='all'" />
+	<noscript>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+	</noscript>
 
 	<!-- Favicon and App Icons -->
 	<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 	<link rel="shortcut icon" href="/favicon.ico">
-	
+
 	<!-- Apple Touch Icon -->
 	<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-	
+
 	<!-- Android Chrome Icons -->
 	<link rel="icon" type="image/png" sizes="192x192" href="/images/android-chrome-192x192.png">
 	<link rel="icon" type="image/png" sizes="512x512" href="/images/android-chrome-512x512.png">
-	
+
 	<!-- Web App Manifest -->
 	<link rel="manifest" href="/site.webmanifest">
-	
+
 	<!-- Microsoft Tiles -->
 	<meta name="msapplication-TileColor" content="#8dd3e3">
 	<meta name="msapplication-TileImage" content="/images/mstile-150x150.png">
 	<meta name="msapplication-config" content="/browserconfig.xml">
-	
+
 	<!-- Theme Color -->
 	<meta name="theme-color" content="#8dd3e3">
 
@@ -96,7 +102,7 @@
 				<span></span>
 				<span></span>
 			</button>
-			
+
 			<!-- Main navigation links -->
 			<a href="#Bio" class="nav-link nav-desktop">Bio</a>
 			<span class="navbar-separator">|</span>
@@ -106,13 +112,14 @@
 			<span class="navbar-separator">|</span>
 			<a href="#Experience" class="nav-link">Experience</a>
 			<span class="navbar-separator">|</span>
-			<a href="#Research" class="nav-link nav-desktop">Research</a>
-			<span class="navbar-separator">|</span>
 			<a href="#Technical_Skill" class="nav-link nav-desktop">Technical Skill</a>
+			<span class="navbar-separator">|</span>
+			<a href="#Research" class="nav-link nav-desktop">Research</a>
+
 			<span class="navbar-separator">|</span>
 			<a href="#Miscellaneous" class="nav-link nav-desktop">Miscellaneous</a>
 		</div>
-		
+
 		<!-- Mobile menu (hamburger dropdown) -->
 		<div class="mobile-menu" id="mobileMenu">
 			<a href="#Bio">Bio</a>
@@ -131,20 +138,22 @@
 						<tbody>
 							<tr style="padding:0px">
 								<td style="width:100%;vertical-align:middle;text-align:center;">
-							<!-- Profile Image -->
-							<div style="margin-bottom: 20px;">
-								<a href="images/badhon_profilePic.webp"><img
-										style="width:300px;max-width:100%;object-fit: cover; border-radius: 50%;"
-										alt="profile photo of Md Sakib Sadman Badhon"
-										src="images/badhon_profilePic.webp" class="hoverZoomLink" loading="eager"
-										decoding="async" width="300" height="300"></a>
-							</div>									<!-- Name -->
-									<p class="name" style="text-align:center; font-size:2.5em; margin-top: 10px; margin-bottom: 5px;">
+									<!-- Profile Image -->
+									<div style="margin-bottom: 20px;">
+										<a href="images/badhon_profilePic.webp"><img
+												style="width:300px;max-width:100%;object-fit: cover; border-radius: 50%;"
+												alt="profile photo of Md Sakib Sadman Badhon"
+												src="images/badhon_profilePic.webp" class="hoverZoomLink"
+												loading="eager" decoding="async" width="300" height="300"></a>
+									</div> <!-- Name -->
+									<p class="name" id="Bio-header"
+										style="text-align:center; font-size:2.5em; margin-top: 10px; margin-bottom: 5px;">
 										Md Sakib Sadman Badhon
 									</p>
 
 									<!-- Links -->
-									<p style="text-align:center; margin-top: 5px; margin-bottom: 50px; font-size: 0.8em;">
+									<p
+										style="text-align:center; margin-top: 5px; margin-bottom: 50px; font-size: 0.8em;">
 										<a href="data/SakibSadman_Resume.pdf?v=19.11">Resume</a> &nbsp;/&nbsp;
 										<a href="mailto:badhon495@gmail.com">Email</a> &nbsp;/&nbsp;
 										<a href="https://www.github.com/badhon495">Github</a> &nbsp;/&nbsp;
@@ -155,18 +164,29 @@
 
 									<!-- Bio -->
 									<p style="text-align: justify; max-width: 800px; margin: 20px auto;">
-										A <b>Computer Science</b> student from Bangladesh with a strong foundation in <b>Software Development</b>, 
-										<b>System Operations</b>, and <b>Open-source Contributions</b>. Currently pursuing my 
-										Bachelor's degree at <a href="https://bracu.ac.bd/">Brac University, Bangladesh</a>. 
-										I have demonstrated expertise in <b>full-stack web development</b>, <b>automation</b>, and 
-										<b>cybersecurity</b> through diverse academic projects and professional experiences.
+										A <b>Computer Science</b> student from Bangladesh with a strong foundation in
+										<b>Software Development</b>,
+										<b>System Operations</b>, and <b>Open-source Contributions</b>. Currently
+										pursuing my
+										Bachelor's degree at <a href="https://bracu.ac.bd/">Brac University,
+											Bangladesh</a>.
+										I have demonstrated expertise in <b>full-stack web development</b>,
+										<b>automation</b>, and
+										<b>cybersecurity</b> through diverse academic projects and professional
+										experiences.
 										<br><br>
-										My journey spans across emerging technologies including <b>Cloud Computing</b> and 
-										<b>Machine Learning</b>, where I actively explore innovative solutions and industry best practices. 
-										With a proven ability to deliver <b>practical, scalable solutions</b> while maintaining 
-										academic excellence, I am passionate about building <b>secure systems</b> that solve 
-										real-world problems. I continuously push my technical and creative boundaries through 
-										hands-on projects, contributing to the open-source community, and staying current with 
+										My journey spans across emerging technologies including <b>Cloud Computing</b>
+										and
+										<b>Machine Learning</b>, where I actively explore innovative solutions and
+										industry best practices.
+										With a proven ability to deliver <b>practical, scalable solutions</b> while
+										maintaining
+										academic excellence, I am passionate about building <b>secure systems</b> that
+										solve
+										real-world problems. I continuously push my technical and creative boundaries
+										through
+										hands-on projects, contributing to the open-source community, and staying
+										current with
 										evolving industry standards.
 										<br><br>
 									</p>
@@ -174,6 +194,7 @@
 							</tr>
 						</tbody>
 					</table>
+					<div class="section-bottom-indicator" data-section="Bio"></div>
 
 					<table class="section" style="margin-top: -20px;">
 						<tbody>
@@ -192,12 +213,16 @@
 												<li><b>CGPA</b> : <b>3.74/4.00</b></li>
 												<li>Recognized on the <a
 														href="https://www.bracu.ac.bd/academics/policies-and-procedures/academic-standings-and-honors"><b>Vice
-														Chancellor's List</b>, <b>Dean's List</b></a>, and awarded the <a
-														href="https://www.bracu.ac.bd/admissions/international-applicants/scholarship-financial-aid"><b>Merit Scholarship Based on BRAC University Academic Results</b></a> across multiple semesters for academic
+															Chancellor's List</b>, <b>Dean's List</b></a>, and awarded
+													the <a
+														href="https://www.bracu.ac.bd/admissions/international-applicants/scholarship-financial-aid"><b>Merit
+															Scholarship Based on BRAC University Academic
+															Results</b></a> across multiple semesters for academic
 													excellence.</li>
 												<li>To further enrich my knowledge beyond the <a
 														href="https://www.bracu.ac.bd/avilable-program/bachelor-science-computer-science-cs">core
-														curriculum</a>, I have taken several <b>elective courses</b> focused on
+														curriculum</a>, I have taken several <b>elective courses</b>
+													focused on
 													<b>emerging and practical technologies</b>:
 													<ul>
 														<li>CSE320: Data Communication</li>
@@ -217,17 +242,23 @@
 												<a href="https://coursera.org/share/44fd8f381cb39ac45892569cdf6f7674">Google
 													Google Cybersecurity Professional Certificate</a></b> [2023]<br>
 											<ul>
-												<li> Acquired the skill to <b>recognize and address</b> common threats, risks,
+												<li> Acquired the skill to <b>recognize and address</b> common threats,
+													risks,
 													and vulnerabilities</li>
-												<li>Acquired experience in how a company <b>handles security challenges</b>
+												<li>Acquired experience in how a company <b>handles security
+														challenges</b>
 												</li>
-												<li>Gained <b>hands-on experience</b> in <b>mitigating security issues</b> within a
+												<li>Gained <b>hands-on experience</b> in <b>mitigating security
+														issues</b> within a
 													company setting</li>
-												<li>Mastered <b>Python</b> for practical application in security-related tasks
+												<li>Mastered <b>Python</b> for practical application in security-related
+													tasks
 												</li>
-												<li>Developed proficiency in navigating and securing the <b>Linux operating
-													system</b></li>
-												<li>Learned the ins and outs of <b>SQL</b> for effective database security and
+												<li>Developed proficiency in navigating and securing the <b>Linux
+														operating
+														system</b></li>
+												<li>Learned the ins and outs of <b>SQL</b> for effective database
+													security and
 													management</li>
 											</ul>
 
@@ -239,12 +270,14 @@
 													IT Automation with Python</a></b> [2024]<br>
 											<ul>
 												<li><b>Automated tasks</b> efficiently by crafting Python scripts </li>
-												<li>Utilized <b>Git and GitHub</b> for effective <b>version control</b> in project
+												<li>Utilized <b>Git and GitHub</b> for effective <b>version control</b>
+													in project
 													management</li>
 												<li>Demonstrated the ability to <b>manage IT resources at scale</b>,
 													encompassing
 													both physical machines and <b>virtual machines in the cloud</b></li>
-												<li>Analyzed real-world IT problems and implemented <b>suitable strategies</b>
+												<li>Analyzed real-world IT problems and implemented <b>suitable
+														strategies</b>
 													to
 													address and resolve those issues</li>
 											</ul>
@@ -260,12 +293,17 @@
 													Data Analytics</a></b> [2024]<br>
 											<ul>
 												<li> Explored the day-to-day tasks of a junior data analyst, gaining
-													<b>practical insights</b> </li>
-												<li>Acquired <b>essential analytical skills</b> using tools like <b>spreadsheets</b>,
-													<b>SQL</b>, <b>R</b>, and <b>Tableau</b></li>
-												<li>Developed expertise in <b>cleaning and organizing data</b> for analysis
+													<b>practical insights</b>
+												</li>
+												<li>Acquired <b>essential analytical skills</b> using tools like
+													<b>spreadsheets</b>,
+													<b>SQL</b>, <b>R</b>, and <b>Tableau</b>
+												</li>
+												<li>Developed expertise in <b>cleaning and organizing data</b> for
+													analysis
 													through hands-on experience</li>
-												<li>Learned how to create <b>impactful visualizations</b> and <b>presentations</b>,
+												<li>Learned how to create <b>impactful visualizations</b> and
+													<b>presentations</b>,
 													showcasing newfound skills in <b>dashboards</b></li>
 
 											</ul>
@@ -283,7 +321,8 @@
 												</li>
 												<li>This course is offered by <b>Qubit by Qubit</b> and <b>Google
 														Quantum AI</b></li>
-												<li>Completion <a href="data/QuantumCertificate.pdf"><b>Certificate</b></a> of
+												<li>Completion <a
+														href="data/QuantumCertificate.pdf"><b>Certificate</b></a> of
 													this course.</li>
 											</ul>
 										</li>
@@ -294,7 +333,8 @@
 													Foundations</a> Exam</b>
 											[2024]<br>
 											<ul>
-												<li>It verifies skills in <b>collaboration</b>, <b>GitHub products</b>, <b>Git basics</b>,
+												<li>It verifies skills in <b>collaboration</b>, <b>GitHub products</b>,
+													<b>Git basics</b>,
 													and <b>working within GitHub repositories</b>.</li>
 												<li>Completion <a
 														href="https://www.credly.com/badges/d5c30c19-02db-4c5f-9bc9-4bd0f4b6a89e/public_url">
@@ -304,12 +344,19 @@
 									</ul>
 
 									<ul>
-										<li><b>Completed <a href="https://agentxbd.com/">Agent X: The AI Challenge</a></b>
+										<li><b>Completed <a href="https://agentxbd.com/">Agent X: The AI
+													Challenge</a></b>
 											[2025]<br>
 											<ul>
-												<li>Participated in Agent X: The AI Challenge, a pioneering AI competition presented by NetCom Learning Bangladesh in partnership with <b>Microsoft</b></li>
-												<li>Gained <b>practical expertise</b> in <b>developing AI agents</b> and applying knowledge to <b>real-world challenges</b> through structured training and mentorship</li>
-												<li>Completion <a href="data/AgentX_Certificate.pdf"><b>Certificate</b></a> issued by NetCom Learning Bangladesh and Microsoft</li>
+												<li>Participated in Agent X: The AI Challenge, a pioneering AI
+													competition presented by NetCom Learning Bangladesh in partnership
+													with <b>Microsoft</b></li>
+												<li>Gained <b>practical expertise</b> in <b>developing AI agents</b> and
+													applying knowledge to <b>real-world challenges</b> through
+													structured training and mentorship</li>
+												<li>Completion <a
+														href="data/AgentX_Certificate.pdf"><b>Certificate</b></a> issued
+													by NetCom Learning Bangladesh and Microsoft</li>
 											</ul>
 										</li>
 									</ul>
@@ -322,8 +369,10 @@
 											<ul>
 												<li>Achieved professional certification in AI prompt engineering
 													fundamentals and best practices</li>
-												<li>Mastered AI prompt engineering fundamentals including <b>structure, optimization, and troubleshooting techniques</b></li>
-												<li>Gained expertise in <b>visual model techniques</b> for image processing,
+												<li>Mastered AI prompt engineering fundamentals including <b>structure,
+														optimization, and troubleshooting techniques</b></li>
+												<li>Gained expertise in <b>visual model techniques</b> for image
+													processing,
 													classification, and <b>generative AI applications</b></li>
 												<li>Completion <a
 														href="https://verify.certs365.io/?=3c7eb735f2aa"><b>Certificate</b></a>
@@ -337,12 +386,17 @@
 											<b>Completed <a href="images/WebDevCertification.webp">Web Development
 													(Advance Level)</a></b> [2022]<br>
 											<ul>
-												<li>This course was offered in the residential semester at Brac University as an extra-curricular activity.</li>
-												<li>Learned advanced concepts in <b>JavaScript</b>, <b>HTML</b>, and <b>modern frameworks</b>
+												<li>This course was offered in the residential semester at Brac
+													University as an extra-curricular activity.</li>
+												<li>Learned advanced concepts in <b>JavaScript</b>, <b>HTML</b>, and
+													<b>modern frameworks</b>
 													for web development.</li>
-												<li>Built <b>responsive and interactive web applications</b>, focusing on <b>best
-													practices</b> for both <b>front-end and back-end integration</b>.</li>
-												<li>Gained <b>practical experience</b> in <b>code organization</b>, <b>deployment</b>, and
+												<li>Built <b>responsive and interactive web applications</b>, focusing
+													on <b>best
+														practices</b> for both <b>front-end and back-end
+														integration</b>.</li>
+												<li>Gained <b>practical experience</b> in <b>code organization</b>,
+													<b>deployment</b>, and
 													maintaining <b>scalable web projects</b>.</li>
 											</ul>
 										</li>
@@ -352,6 +406,7 @@
 							</tr>
 						</tbody>
 					</table>
+					<div class="section-bottom-indicator" data-section="Education"></div>
 
 
 
@@ -363,26 +418,56 @@
 									<p style="text-align: justify;">
 									<ul class="extra_gap">
 										<li>
-											<b><a href="https://github.com/badhon495/Job-Application-Assistant">Job-Application-Assistant</a></b>
+											<b><a
+													href="https://github.com/badhon495/Job-Application-Assistant">Job-Application-Assistant</a></b>
 											[2025]<br>
 											<ul>
-												<li>Job Application Assistant is an <b>AI-powered</b>, agent-based application that generates professional, <b>ATS-friendly</b> CVs and tailored cover letters from user profiles and job postings. It features modular sub-agents for profile & job parsing, context-aware content generation using Google Gemini, <b>LaTeX-to-PDF</b> compilation, and a <b>validation framework</b> to ensure quality and formatting. This project was built as part of the capstone project for the <a href="https://www.kaggle.com/competitions/agents-intensive-capstone-project" target="_blank">5-Day AI Agents Intensive Course with Google</a>.</li>
-												<li><b>Skill Gained :</b> <b>LLM integration</b>, <b>prompt engineering</b>, <b>agent orchestration</b>, Python CLI tooling, LaTeX PDF generation, and automated content validation and testing.</li>
+												<li>Job Application Assistant is an <b>AI-powered</b>, agent-based
+													application that generates professional, <b>ATS-friendly</b> CVs and
+													tailored cover letters from user profiles and job postings. It
+													features modular sub-agents for profile & job parsing, context-aware
+													content generation using Google Gemini, <b>LaTeX-to-PDF</b>
+													compilation, and a <b>validation framework</b> to ensure quality and
+													formatting. This project was built as part of the capstone project
+													for the <a
+														href="https://www.kaggle.com/competitions/agents-intensive-capstone-project"
+														target="_blank">5-Day AI Agents Intensive Course with
+														Google</a>.</li>
+												<li><b>Skill Gained :</b> <b>LLM integration</b>, <b>prompt
+														engineering</b>, <b>agent orchestration</b>, Python CLI tooling,
+													LaTeX PDF generation, and automated content validation and testing.
+												</li>
 											</ul>
 										</li>
 									</ul>
 
 									<ul class="extra_gap">
 										<li>
-											<b><a
-												href="https://github.com/nihal-kabir/ShikkhaDwar">ShikkhaDwar</a></b>
+											<b><a href="https://github.com/nihal-kabir/ShikkhaDwar">ShikkhaDwar</a></b>
 											[2025]<br>
 											<ul>
-												<li>ShikkhaDwar is a modern, easy-to-use <b>Learning Management System</b> for creating and managing online courses. It features <b>course management capabilities</b> allowing instructors to create, publish, and manage online courses, YouTube integration with downloadable resources for video lessons, quizzes and assessments with multiple question types and <b>auto-grading</b>, <b>comprehensive progress tracking</b> to monitor student completion, <b>automatic certificate generation</b> upon course completion, and distinct user roles for Students, Instructors, and Administrators.</li>
-												<li><b>Skill Gained : </b>Full-stack development with modern LMS architecture, implementing user role management and <b>authentication systems</b>, building <b>quiz and assessment engines</b> with auto-grading functionality, <b>integrating third-party services</b> for video content and file management, developing certificate generation systems, creating progress tracking and analytics features, and designing responsive educational interfaces.</li>
-												<li><b>Live Demo : </b><a
-													href="https://shikkhadwar-81r2.onrender.com/"
-													target="_blank">https://shikkhadwar-81r2.onrender.com/</a> (As it deploys from free-tier services, it may take a moment to wake up.)
+												<li>ShikkhaDwar is a modern, easy-to-use <b>Learning Management
+														System</b> for creating and managing online courses. It features
+													<b>course management capabilities</b> allowing instructors to
+													create, publish, and manage online courses, YouTube integration with
+													downloadable resources for video lessons, quizzes and assessments
+													with multiple question types and <b>auto-grading</b>,
+													<b>comprehensive progress tracking</b> to monitor student
+													completion, <b>automatic certificate generation</b> upon course
+													completion, and distinct user roles for Students, Instructors, and
+													Administrators.</li>
+												<li><b>Skill Gained : </b>Full-stack development with modern LMS
+													architecture, implementing user role management and
+													<b>authentication systems</b>, building <b>quiz and assessment
+														engines</b> with auto-grading functionality, <b>integrating
+														third-party services</b> for video content and file management,
+													developing certificate generation systems, creating progress
+													tracking and analytics features, and designing responsive
+													educational interfaces.</li>
+												<li><b>Live Demo : </b><a href="https://shikkhadwar-81r2.onrender.com/"
+														target="_blank">https://shikkhadwar-81r2.onrender.com/</a> (As
+													it deploys from free-tier services, it may take a moment to wake
+													up.)
 												</li>
 											</ul>
 										</li>
@@ -394,14 +479,20 @@
 											[2025]<br>
 											<ul>
 												<li>Routine2Calendar is a modern, responsive web application that allows
-													BRAC University students to <b>search, select, and export their class
-													schedules directly to Calendar</b> with just a few clicks. Built with
+													BRAC University students to <b>search, select, and export their
+														class
+														schedules directly to Calendar</b> with just a few clicks. Built
+													with
 													JavaScript, HTML, and Tailwind CSS, it helps students easily convert
 													their BRACU class schedule to Calendar events, ensuring they never
 													worry about missing classes or exams again.</li>
-												<li><b>Impact : </b> Successfully serving <b>200+ monthly active users</b>, demonstrating strong user adoption and providing tangible value to the BRAC University student community by streamlining academic schedule management.</li>
+												<li><b>Impact : </b> Successfully serving <b>200+ monthly active
+														users</b>, demonstrating strong user adoption and providing
+													tangible value to the BRAC University student community by
+													streamlining academic schedule management.</li>
 												<li><b>Skill Gained : </b> Enhanced JavaScript skills for <b>DOM
-													manipulation and data processing</b>, experience with Tailwind CSS for
+														manipulation and data processing</b>, experience with Tailwind
+													CSS for
 													rapid UI development, implemented calendar integration and data
 													export functionality, and developed responsive design principles for
 													academic tools.</li>
@@ -417,22 +508,32 @@
 											<b><a href="https://github.com/badhon495/should-i-retake">Should I
 													Retake</a></b> [2025]<br>
 											<ul>
-												<li>Should I Retake is an <b>advanced grade sheet analysis web application</b>
+												<li>Should I Retake is an <b>advanced grade sheet analysis web
+														application</b>
 													that helps students make informed decisions about retaking courses
 													to improve their CGPA. Built with HTML5, CSS3, and vanilla
-													JavaScript, it features <b>PDF and Excel file parsing</b>, <b>intelligent
-													course data extraction</b> with retake, repeat and failed course
+													JavaScript, it features <b>PDF and Excel file parsing</b>,
+													<b>intelligent
+														course data extraction</b> with retake, repeat and failed course
 													detection, real-time CGPA calculation with editable grade points,
 													interactive course management (add/delete/modify), Excel export
 													functionality, and a modern dark-themed responsive interface.</li>
-												<li><b>Impact : </b> Achieved <b>3,000+ monthly active users</b>, establishing the platform as a go-to solution for academic planning within the university community, with high user engagement and positive feedback on data-driven course decision-making.</li>
-												<li><b>Skill Gained : </b> Advanced file processing with <b>PDF.js</b> and
-													<b>SheetJS libraries</b>, implemented <b>complex parsing algorithms</b> for
+												<li><b>Impact : </b> Achieved <b>3,000+ monthly active users</b>,
+													establishing the platform as a go-to solution for academic planning
+													within the university community, with high user engagement and
+													positive feedback on data-driven course decision-making.</li>
+												<li><b>Skill Gained : </b> Advanced file processing with <b>PDF.js</b>
+													and
+													<b>SheetJS libraries</b>, implemented <b>complex parsing
+														algorithms</b> for
 													academic data extraction, mastered asynchronous JavaScript for file
 													handling, developed sophisticated DOM manipulation for dynamic table
-													generation, created <b>responsive design</b> with CSS Grid and Flexbox and
-													implemented <b>performance optimizations</b> including critical CSS and
-													preloading strategies.</li>
+													generation, created <b>responsive design</b> with CSS Grid and
+													Flexbox and
+													implemented <b>performance optimizations</b> including critical CSS
+													and
+													preloading strategies.
+												</li>
 												<li><b>Live Demo : </b><a
 														href="https://badhon495.github.io/should-i-retake/"
 														target="_blank">https://badhon495.github.io/should-i-retake/</a>
@@ -447,10 +548,14 @@
 											<ul>
 												<li>BRACU CGPA Calculator is a simple web application that helps Brac
 													University students <b>calculate their CGPA and view their academic
-													progress</b>. Built with HTML, CSS and JavaScript, it features dynamic
+														progress</b>. Built with HTML, CSS and JavaScript, it features
+													dynamic
 													semester addition, grade calculation with the Brac University
 													grading system, and a clean, responsive interface.</li>
-												<li><b>Impact : </b> Scaled to <b>5,000+ monthly active users</b>, making it the most widely-used academic tool among BRAC University students, with exceptional user retention and becoming an essential resource for academic performance tracking.</li>
+												<li><b>Impact : </b> Scaled to <b>5,000+ monthly active users</b>,
+													making it the most widely-used academic tool among BRAC University
+													students, with exceptional user retention and becoming an essential
+													resource for academic performance tracking.</li>
 												<li><b>Skill Gained : </b> Enhanced DOM manipulation skills with vanilla
 													JavaScript, designed responsive UI/UX for academic tools, and
 													developed grade calculation algorithms following institutional
@@ -467,14 +572,17 @@
 											<b><a href="https://github.com/badhon495/ParkIt">ParkIt</a></b> [2025]<br>
 											<ul>
 												<li>ParkIt is a web application for <b>booking parking slots, similar to
-													Airbnb but for cars</b>. Users can sign up, log in, manage their
+														Airbnb but for cars</b>. Users can sign up, log in, manage their
 													profiles, search and book available parking slots, and homeowners
 													can list their garages for rent. The app also features a password
 													reset via email for user convenience.</li>
 												<li><b>Skill Gained : </b> Developed full-stack web application with
-													<b>Laravel</b>, implemented authentication and user management, built
-													search and booking logic, and integrated <b>email-based password reset
-													functionality</b>.</li>
+													<b>Laravel</b>, implemented authentication and user management,
+													built
+													search and booking logic, and integrated <b>email-based password
+														reset
+														functionality</b>.
+												</li>
 												<li><b>Live Demo : </b><a href="https://parkit-2arc.onrender.com/"
 														target="_blank">https://parkit-2arc.onrender.com/ </a>(Since
 													it's deployed on a free tier, it might take some time to load.
@@ -487,20 +595,29 @@
 										<li>
 											<b><a href="https://github.com/badhon495/Nirapod">Nirapod</a></b> [2025]<br>
 											<ul>
-												<li>Nirapod is a full-stack web application built with <b>Spring Boot</b> and
-													<b>React</b>, designed to improve <b>community safety and communication</b>. It
+												<li>Nirapod is a full-stack web application built with <b>Spring
+														Boot</b> and
+													<b>React</b>, designed to improve <b>community safety and
+														communication</b>. It
 													allows users to report local issues with descriptions, images, and
 													live locations, while authorities like police or fire services can
-													respond in real time. Featuring a <b>social feed</b>, <b>live chat</b>, and
-													<b>location sharing</b>, Nirapod fosters transparent and quick interaction
-													between citizens and responders.</li>
+													respond in real time. Featuring a <b>social feed</b>, <b>live
+														chat</b>, and
+													<b>location sharing</b>, Nirapod fosters transparent and quick
+													interaction
+													between citizens and responders.
+												</li>
 												<li><b>Skill Gained : </b> Hands-on experience with full-stack
 													development using Spring Boot and React, implementing real-time
-													features (chat, location sharing), <b>secure authentication</b>, <b>file
-													handling</b>, and integrating <b>PostgreSQL</b> with automated setup scripts.
+													features (chat, location sharing), <b>secure authentication</b>,
+													<b>file
+														handling</b>, and integrating <b>PostgreSQL</b> with automated
+													setup scripts.
 												</li>
 												<li><b>Live Demo : </b><a href="https://nirapod.netlify.app/"
-														target="_blank">https://nirapod.netlify.app/</a> (Backend hosted on Render free tier — first request might take some time to response.)</li>
+														target="_blank">https://nirapod.netlify.app/</a> (Backend hosted
+													on Render free tier — first request might take some time to
+													response.)</li>
 											</ul>
 										</li>
 									</ul>
@@ -510,15 +627,18 @@
 											<ul>
 												<li>Karigor is an online appointment system. It streamlines the car
 													workshop booking process by allowing clients to <b>book appointments
-													with mechanics online</b>, reducing in-person chaos. Clients
+														with mechanics online</b>, reducing in-person chaos. Clients
 													provide their details and select a preferred mechanic (if
 													available), while admins can <b>view, modify, and reassign
-													appointments</b>. The system ensures no mechanic is overloaded, with a
+														appointments</b>. The system ensures no mechanic is overloaded,
+													with a
 													maximum of four active cars per day per mechanic.</li>
 												<li><b>Skill Gained : </b> Experience in full-stack web development
-													using <b>Laravel</b>, designing relational databases with <b>SQLite</b>,
-													implementing dynamic user/admin panels, and managing <b>booking logic
-													and constraints</b> in a real-world scenario.</li>
+													using <b>Laravel</b>, designing relational databases with
+													<b>SQLite</b>,
+													implementing dynamic user/admin panels, and managing <b>booking
+														logic
+														and constraints</b> in a real-world scenario.</li>
 												<li><b>Live Demo : </b><a href="https://karigor.onrender.com/"
 														target="_blank">https://karigor.onrender.com/</a>
 													(Since it's deployed on a free tier, it might take some time to
@@ -531,8 +651,19 @@
 											<b><a href="https://github.com/badhon495/Easy_Docker_Installation">Easy
 													Docker Installation</a></b> [2024]<br>
 											<ul>
-												<li>A <b>streamlined automation script that simplifies Docker installation</b> across multiple <b>Linux</b> distributions with a single command. This intelligent <b>shell script</b> automatically detects the operating system and executes the appropriate installation commands, <b>reducing manual configuration time by 99%</b> and eliminating compatibility issues across various Linux distros including Ubuntu, Debian, CentOS, Fedora, and more.</li>
-												<li><b>Skill Gained : </b> Advanced <b>Linux shell scripting</b> with complex conditional logic and control flow, system-level programming for OS detection and package management, automation of <b>DevOps workflows</b>, and implementation of <b>cross-platform compatibility solutions</b>.</li>
+												<li>A <b>streamlined automation script that simplifies Docker
+														installation</b> across multiple <b>Linux</b> distributions with
+													a single command. This intelligent <b>shell script</b> automatically
+													detects the operating system and executes the appropriate
+													installation commands, <b>reducing manual configuration time by
+														99%</b> and eliminating compatibility issues across various
+													Linux distros including Ubuntu, Debian, CentOS, Fedora, and more.
+												</li>
+												<li><b>Skill Gained : </b> Advanced <b>Linux shell scripting</b> with
+													complex conditional logic and control flow, system-level programming
+													for OS detection and package management, automation of <b>DevOps
+														workflows</b>, and implementation of <b>cross-platform
+														compatibility solutions</b>.</li>
 											</ul>
 										</li>
 									</ul>
@@ -542,8 +673,23 @@
 													href="https://github.com/debjotyms/streamlit-ml-intrusion-detection-system">Network
 													Intrusion Detection System</a></b> [2024]<br>
 											<ul>
-												<li>An <b>advanced machine learning-powered cybersecurity application that provides real-time network intrusion detection</b> with <b>95.68% accuracy</b>. Built with Streamlit and Random Forest classifier, the system features instant classification of network traffic as normal or anomalous with confidence scoring. The application includes a user-friendly interface with intuitive input fields, real-time validation, visual results with probability breakdowns, color-coded security alerts, and one-click model training with automated preprocessing.</li>
-												<li><b>Skill Gained : </b> Implemented advanced machine learning algorithms using <b>Random Forest classifier</b> for cybersecurity applications, developed production-ready web interfaces with <b>Streamlit</b>, designed real-time data processing pipelines with input validation and error handling, created intuitive UX/UI with dynamic visual feedback systems, and gained deep expertise in network security and threat detection through practical application of ML to cybersecurity challenges.</li>
+												<li>An <b>advanced machine learning-powered cybersecurity application
+														that provides real-time network intrusion detection</b> with
+													<b>95.68% accuracy</b>. Built with Streamlit and Random Forest
+													classifier, the system features instant classification of network
+													traffic as normal or anomalous with confidence scoring. The
+													application includes a user-friendly interface with intuitive input
+													fields, real-time validation, visual results with probability
+													breakdowns, color-coded security alerts, and one-click model
+													training with automated preprocessing.</li>
+												<li><b>Skill Gained : </b> Implemented advanced machine learning
+													algorithms using <b>Random Forest classifier</b> for cybersecurity
+													applications, developed production-ready web interfaces with
+													<b>Streamlit</b>, designed real-time data processing pipelines with
+													input validation and error handling, created intuitive UX/UI with
+													dynamic visual feedback systems, and gained deep expertise in
+													network security and threat detection through practical application
+													of ML to cybersecurity challenges.</li>
 												<li><b>Live Demo : </b><a href="https://ml-ids.streamlit.app/"
 														target="_blank">https://ml-ids.streamlit.app/</a> (It might take
 													some time to load)</li>
@@ -555,17 +701,22 @@
 											<b><a href="https://github.com/badhon495/HealthCare-dApp">HealthCare
 													Decentralized App</a></b> [2024]
 											<ul>
-												<li>HealthCare Decentralized App is a <b>dApp</b> for <b>managing patient records
-													and doctor bookings</b>. It features appointment management,
+												<li>HealthCare Decentralized App is a <b>dApp</b> for <b>managing
+														patient records
+														and doctor bookings</b>. It features appointment management,
 													role-based access for patients, doctors, and admins, and securely
-													stores all data on the <b>Ethereum blockchain</b> using <b>smart contracts</b>.
-													The app is built with <b>React.js</b> and <b>Solidity</b>, interacts with the
+													stores all data on the <b>Ethereum blockchain</b> using <b>smart
+														contracts</b>.
+													The app is built with <b>React.js</b> and <b>Solidity</b>, interacts
+													with the
 													blockchain via MetaMask, and uses Truffle and Ganache for deployment
 													and local testing.</li>
 												<li><b>Skill Gained : </b> Practical experience in smart contract
-													development with <b>Solidity</b>, integrating React.js front-end with
+													development with <b>Solidity</b>, integrating React.js front-end
+													with
 													blockchain, using <b>MetaMask</b> for decentralized authentication,
-													deploying contracts with <b>Truffle</b>, and managing a local Ethereum
+													deploying contracts with <b>Truffle</b>, and managing a local
+													Ethereum
 													environment with <b>Ganache</b>.</li>
 											</ul>
 										</li>
@@ -576,13 +727,16 @@
 													href="https://github.com/HypnoSphynx/TravelNest_CSE370_Fall23_BracU">TravelNest</a></b>
 											[2024]
 											<ul>
-												<li>TravelNest is a <b>simple hotel booking management website</b> developed as
+												<li>TravelNest is a <b>simple hotel booking management website</b>
+													developed as
 													a beginner-level project for the Database Management course.
 													Built using HTML, PHP, MySQL, Bootstrap, and a bit of JavaScript,
 													the project focuses primarily on backend functionality to meet the
 													requirements of a DBMS course.</li>
-												<li><b>Skill Gained : </b> Practical experience in <b>database design and
-													management</b>, <b>backend development</b> with <b>PHP and MySQL</b>, integrating
+												<li><b>Skill Gained : </b> Practical experience in <b>database design
+														and
+														management</b>, <b>backend development</b> with <b>PHP and
+														MySQL</b>, integrating
 													front-end and back-end technologies, and using Bootstrap for
 													responsive UI.</li>
 											</ul>
@@ -593,10 +747,13 @@
 											<b><a href="https://badhon495.github.io/leetjourney/">leetjourney</a></b>
 											[2024]<br>
 											<ul>
-												<li> leetjourney is my website where I share my <b>solutions to different
-													LeetCode problems</b>, making it a helpful place for people who enjoy
+												<li> leetjourney is my website where I share my <b>solutions to
+														different
+														LeetCode problems</b>, making it a helpful place for people who
+													enjoy
 													coding.</li>
-												<li><b>Skill Gained : </b> Utilizing and customizing <b>Jekyll themes</b>,
+												<li><b>Skill Gained : </b> Utilizing and customizing <b>Jekyll
+														themes</b>,
 													Experience on the <b>Ruby programming language</b>.</li>
 											</ul>
 										</li>
@@ -606,8 +763,26 @@
 											<b><a href="https://github.com/badhon495/Guess-The-Youtuber">Guess The
 													Youtuber</a></b> [2024]<br>
 											<ul>
-												<li>"Guess The YouTuber" is an interactive web-based guessing game inspired by guessme.io, where <b>players view YouTube video thumbnails and attempt to guess the YouTuber's name</b>. Built with React front-end and <b>Express</b> back-end, integrated with <b>YouTube Data API v3</b>, the game features a beautiful animated particle background with 80+ floating particles and interactive effects, dynamic scoring system, lives counter with game over mechanics, smart hint system that reveals partial channel names after wrong attempts, modern <b>glassmorphism</b> UI design with dark theme, and fully responsive mobile-optimized interface for seamless gameplay across all devices.</li>
-												<li><b>Skill Gained : </b> Developed a full-stack application utilizing <b>React</b> for dynamic front-end interactions and <b>Express</b> for robust back-end API handling, integrated <b>external RESTful APIs</b> (YouTube Data API v3) with proper authentication and rate limiting, implemented <b>advanced CSS animations</b> and particle systems using <b>Canvas API</b>, designed responsive game mechanics with state management, created <b>glassmorphism design patterns</b> with modern UI/UX principles, and optimized cross-device compatibility for mobile and desktop platforms.</li>
+												<li>"Guess The YouTuber" is an interactive web-based guessing game
+													inspired by guessme.io, where <b>players view YouTube video
+														thumbnails and attempt to guess the YouTuber's name</b>. Built
+													with React front-end and <b>Express</b> back-end, integrated with
+													<b>YouTube Data API v3</b>, the game features a beautiful animated
+													particle background with 80+ floating particles and interactive
+													effects, dynamic scoring system, lives counter with game over
+													mechanics, smart hint system that reveals partial channel names
+													after wrong attempts, modern <b>glassmorphism</b> UI design with
+													dark theme, and fully responsive mobile-optimized interface for
+													seamless gameplay across all devices.</li>
+												<li><b>Skill Gained : </b> Developed a full-stack application utilizing
+													<b>React</b> for dynamic front-end interactions and <b>Express</b>
+													for robust back-end API handling, integrated <b>external RESTful
+														APIs</b> (YouTube Data API v3) with proper authentication and
+													rate limiting, implemented <b>advanced CSS animations</b> and
+													particle systems using <b>Canvas API</b>, designed responsive game
+													mechanics with state management, created <b>glassmorphism design
+														patterns</b> with modern UI/UX principles, and optimized
+													cross-device compatibility for mobile and desktop platforms.</li>
 												<li><b>Live Demo : </b><a href="https://guess-the-youtuber.netlify.app/"
 														target="_blank">https://guess-the-youtuber.netlify.app/</a>
 													(Since I'm using the free tier of the API, you might encounter a
@@ -621,7 +796,7 @@
 													(Game)</a></b> [2024]
 											<ul>
 												<li>Escaping-BRACU is a visual game developed as part of the
-												Computer Graphics course project using Python and PyOpenGL.
+													Computer Graphics course project using Python and PyOpenGL.
 													The game simulates the challenges faced by students, with gameplay
 													mechanics restricted to using only GL_POINTS, the Midpoint Line, and
 													Midpoint Circle algorithms. The player navigates a movable box
@@ -632,7 +807,8 @@
 												</li>
 												<li><b>Skill Gained : </b> Hands-on experience with computer graphics
 													algorithms (Midpoint Line and Circle), <b>OpenGL programming with
-													Python</b>, implementing <b>collision detection</b>, procedural content
+														Python</b>, implementing <b>collision detection</b>, procedural
+													content
 													generation, and designing multi-level game logic with increasing
 													difficulty.</li>
 											</ul>
@@ -643,12 +819,14 @@
 											<b><a href="https://github.com/badhon495/academic-portfolio">Academic
 													Portfolio Template</a></b> [2024]<br>
 											<ul>
-												<li>This is a <b>simple academic portfolio template</b> to showcase research,
+												<li>This is a <b>simple academic portfolio template</b> to showcase
+													research,
 													projects, and professional experience. Built with pure HTML, CSS,
 													and minimal JavaScript, it features a clean, modern, and accessible
 													design. The template is fully responsive, includes a dark/light mode
-													toggle, an <b>anonymous message popup</b>, and displays the <b>last update
-													time</b> in the footer. All content is easily customizable in
+													toggle, an <b>anonymous message popup</b>, and displays the <b>last
+														update
+														time</b> in the footer. All content is easily customizable in
 													index.html, and no build step is required.</li>
 												<li><b>Skill Gained : </b> Designed a fully responsive and accessible
 													web template, implemented dark/light mode toggle, and focused on
@@ -663,6 +841,7 @@
 							</tr>
 						</tbody>
 					</table>
+					<div class="section-bottom-indicator" data-section="Project"></div>
 
 					<table class="section">
 						<tbody>
@@ -676,8 +855,16 @@
 											<b>Maintainer</b> [November 2025 - ] <br>
 											<b><a href="https://github.com/tldr-pages/tldr">tldr-pages</a></b> <br>
 											<ul>
-												<li>Contributed to the tldr-pages project, a highly-acclaimed open source initiative with <b>60,000+ GitHub stars</b>, by localizing command-line <b>documentation</b> into Bangla, making Linux and command-line tools more accessible to the Bengali community.</li>
-												<li><b>Skills Gained:</b> Enhanced understanding of <b>Linux command-line tools</b> and their practical usage, developed expertise in technical documentation translation and localization, gained experience in <b>collaborative open source contribution</b>, and improved ability to make technical knowledge accessible across language barriers.</li>
+												<li>Contributed to the tldr-pages project, a highly-acclaimed open
+													source initiative with <b>60,000+ GitHub stars</b>, by localizing
+													command-line <b>documentation</b> into Bangla, making Linux and
+													command-line tools more accessible to the Bengali community.</li>
+												<li><b>Skills Gained:</b> Enhanced understanding of <b>Linux
+														command-line tools</b> and their practical usage, developed
+													expertise in technical documentation translation and localization,
+													gained experience in <b>collaborative open source contribution</b>,
+													and improved ability to make technical knowledge accessible across
+													language barriers.</li>
 											</ul>
 										</li>
 									</ul>
@@ -687,13 +874,18 @@
 											<b>Maintainer</b> [April 2025 - ] <br>
 											<b><a href="https://opentelemetry.io/">OpenTelemetry</a></b> <br>
 											<ul>
-												<li>Contributed to the OpenTelemetry project, a <b>widely-adopted observability framework with 800+ GitHub stars</b>, by localizing documentation
+												<li>Contributed to the OpenTelemetry project, a <b>widely-adopted
+														observability framework with 800+ GitHub stars</b>, by
+													localizing documentation
 													into Bangla, helping to make observability tools more accessible to
 													the Bengali-speaking developer community.</li>
 												<li><b>Skills Gained:</b> Gained hands-on experience working with
-													<b>project maintainers</b>, creating <b>pull requests</b>, understanding <b>CI/CD
-													workflows</b>, and contributing to large-scale open source projects with
-													proper <b>documentation standards</b> and <b>internationalization practices</b>.
+													<b>project maintainers</b>, creating <b>pull requests</b>,
+													understanding <b>CI/CD
+														workflows</b>, and contributing to large-scale open source
+													projects with
+													proper <b>documentation standards</b> and <b>internationalization
+														practices</b>.
 												</li>
 											</ul>
 										</li>
@@ -706,12 +898,15 @@
 											</b><br>
 											<ul>
 												<li>Actively raising awareness about cyber threats and <b>promoting
-													cybersecurity best practices</b> within the university community and
+														cybersecurity best practices</b> within the university community
+													and
 													beyond.</li>
 												<li><b>Skills Gained:</b> Enhanced knowledge of current cybersecurity
 													threats and trends, developed <b>public speaking and presentation
-													skills</b>, gained experience in community outreach and educational
-													initiatives, improved <b>networking abilities</b> within the cybersecurity
+														skills</b>, gained experience in community outreach and
+													educational
+													initiatives, improved <b>networking abilities</b> within the
+													cybersecurity
 													industry, and strengthened <b>leadership capabilities</b> through
 													ambassador responsibilities.</li>
 											</ul>
@@ -724,12 +919,16 @@
 											<b><a href="https://bracucc.org/">Department of Press and Release, BUCC</a>
 											</b><br>
 											<ul>
-												<li>Covered <b>numerous events</b> and crafted <b>engaging articles</b> for the club,
+												<li>Covered <b>numerous events</b> and crafted <b>engaging articles</b>
+													for the club,
 													contributing to the university's technology community outreach and
 													communication efforts.</li>
-												<li><b>Skills Gained:</b> Developed <b>strong written communication skills</b>,
-													gained experience in <b>event coverage and journalism</b>, enhanced ability
-													to work in <b>team environments</b>, improved time management through
+												<li><b>Skills Gained:</b> Developed <b>strong written communication
+														skills</b>,
+													gained experience in <b>event coverage and journalism</b>, enhanced
+													ability
+													to work in <b>team environments</b>, improved time management
+													through
 													meeting deadlines, and learned to effectively communicate technical
 													concepts to diverse audiences.</li>
 											</ul>
@@ -742,11 +941,15 @@
 											<b><a href="https://www.toyghor.com/">ToyGhor</a></b> <br>
 
 											<ul>
-												<li>Managed social media and customer relations for a <b>leading toy retail business</b> with an <b>online community of 100,000+ followers</b>. My
-													management of this platform has facilitated the development of a range
+												<li>Managed social media and customer relations for a <b>leading toy
+														retail business</b> with an <b>online community of 100,000+
+														followers</b>. My
+													management of this platform has facilitated the development of a
+													range
 													of valuable soft skills, including the ability to <b>type Bangla
-													fluently</b> and <b>interact with individuals</b> in a <b>professional and
-													effective manner</b>.
+														fluently</b> and <b>interact with individuals</b> in a
+													<b>professional and
+														effective manner</b>.
 												</li>
 												<li><b>Responsibilities : </b>Communicating with Customers, Processing
 													Orders, and Managing Online Community Engagement</li>
@@ -760,11 +963,15 @@
 											<b>Content Creator</b> [January 2021 - September 2022] <br>
 											<b><a href="https://xoshlife.com">Xoshlife, Edison Group</a></b>
 											<ul>
-												<li>Served as a <b>technology content writer</b> for an <b>online news portal</b>, creating <b>technical articles</b> that engaged readers with complex tech topics. Regrettably, Xoshlife closed due to
+												<li>Served as a <b>technology content writer</b> for an <b>online news
+														portal</b>, creating <b>technical articles</b> that engaged
+													readers with complex tech topics. Regrettably, Xoshlife closed due
+													to
 													financial constraints.
 												</li>
 												<li><b>Responsibilities : </b>Authored <b>10+ articles</b>
-													(Generated <b>5,000+ views</b>), covering emerging tech trends and innovations.
+													(Generated <b>5,000+ views</b>), covering emerging tech trends and
+													innovations.
 												</li>
 											</ul>
 										</li>
@@ -775,6 +982,7 @@
 							</tr>
 						</tbody>
 					</table>
+					<div class="section-bottom-indicator" data-section="Experience"></div>
 					<table class="section">
 						<tbody>
 							<tr>
@@ -793,6 +1001,7 @@
 							</tr>
 						</tbody>
 					</table>
+					<div class="section-bottom-indicator" data-section="Technical_Skill"></div>
 
 
 
@@ -804,32 +1013,93 @@
 									<p style="text-align: justify;">
 									<ul>
 										<li>
-											<b>Undergraduate Thesis: <a href="https://github.com/SiamFS/sisa-class-unlearning">Machine Unlearning for Class Removal through SISA-based Deep Neural Network Architectures</a></b> [2025]<br>
+											<b>Undergraduate Thesis: <a
+													href="https://github.com/SiamFS/sisa-class-unlearning">Machine
+													Unlearning for Class Removal through SISA-based Deep Neural Network
+													Architectures</a></b> [2025]<br>
 											<ul>
-												<li><b>Status:</b> Currently <b>under review</b> for publication in a <b>peer-reviewed journal</b>.</li>
-												<li><b>Abstract:</b> As the adoption of image generation models and other AI systems accelerates, concerns around user data privacy and consent have become increasingly critical. With the slowdown in growth of publicly available data, major tech companies are anticipated to rely more on proprietary and private user data for training their models. This raises ethical and legal questions, particularly when users request data deletion after it has already influenced a trained model—a process that is both technically challenging and resource-intensive. The emerging field of machine unlearning addresses this issue by developing techniques to remove specific data from trained models. Among these, the SISA (Sharded, Isolated, Sliced, and Aggregated) framework has shown promise as a scalable and privacy-aware unlearning solution. In this research, we focus on leveraging a modified SISA framework to enable class-level data removal in Convolutional Neural Network (CNN) architectures. We evaluate how well the modified SISA framework supports effective class unlearning without requiring full model retraining, and analyze the trade-offs in model performance, accuracy, and privacy. Through experiments across various image datasets and CNN architectures, we aim to demonstrate the practical viability of SISA-based class unlearning for real-world applications, offering insights into its strengths, limitations, and potential for deployment in privacy-sensitive AI systems.</li>
+												<li><b>Status:</b> Currently <b>under review</b> for publication in a
+													<b>peer-reviewed journal</b>.</li>
+												<li><b>Abstract:</b> As the adoption of image generation models and
+													other AI systems accelerates, concerns around user data privacy and
+													consent have become increasingly critical. With the slowdown in
+													growth of publicly available data, major tech companies are
+													anticipated to rely more on proprietary and private user data for
+													training their models. This raises ethical and legal questions,
+													particularly when users request data deletion after it has already
+													influenced a trained model—a process that is both technically
+													challenging and resource-intensive. The emerging field of machine
+													unlearning addresses this issue by developing techniques to remove
+													specific data from trained models. Among these, the SISA (Sharded,
+													Isolated, Sliced, and Aggregated) framework has shown promise as a
+													scalable and privacy-aware unlearning solution. In this research, we
+													focus on leveraging a modified SISA framework to enable class-level
+													data removal in Convolutional Neural Network (CNN) architectures. We
+													evaluate how well the modified SISA framework supports effective
+													class unlearning without requiring full model retraining, and
+													analyze the trade-offs in model performance, accuracy, and privacy.
+													Through experiments across various image datasets and CNN
+													architectures, we aim to demonstrate the practical viability of
+													SISA-based class unlearning for real-world applications, offering
+													insights into its strengths, limitations, and potential for
+													deployment in privacy-sensitive AI systems.</li>
 											</ul>
 										</li>
 									</ul>
 
 									<ul>
 										<li>
-											<b>Course Research: <a href="https://github.com/badhon495/PostPartum-Depression-Detection">Postpartum Depression Detection using Machine Learning</a></b> [CSE422: Artificial Intelligence]<br>
+											<b>Course Research: <a
+													href="https://github.com/badhon495/PostPartum-Depression-Detection">Postpartum
+													Depression Detection using Machine Learning</a></b> [CSE422:
+											Artificial Intelligence]<br>
 											<ul>
-												<li>Developed a machine learning-based system to detect postpartum depression using survey data, evaluating multiple classification algorithms including <b>KNN, SVM, Decision Tree, Naive Bayes, and Logistic Regression</b>. The dataset from Kaggle contains survey responses related to mental health indicators such as sadness, anxiety, and sleep patterns.</li>
-												<li><b>Results:</b> The Decision Tree classifier achieved the best performance with <b>95%+ accuracy</b>, outperforming all other models. SVM achieved <b>91% accuracy</b>, KNN <b>90%</b>, Naive Bayes <b>76%</b>, and Logistic Regression <b>74%</b>. All performance metrics demonstrated strong consistency, indicating effective capture of underlying data relationships.</li>
-												<li><b>Skills Gained:</b> Applied <b>data preprocessing techniques</b> including feature engineering and label encoding, implemented and compared <b>multiple ML classification algorithms</b>, performed <b>model evaluation using accuracy, precision, recall, and F1 scores</b>, and analyzed performance through <b>confusion matrices</b>.</li>
+												<li>Developed a machine learning-based system to detect postpartum
+													depression using survey data, evaluating multiple classification
+													algorithms including <b>KNN, SVM, Decision Tree, Naive Bayes, and
+														Logistic Regression</b>. The dataset from Kaggle contains survey
+													responses related to mental health indicators such as sadness,
+													anxiety, and sleep patterns.</li>
+												<li><b>Results:</b> The Decision Tree classifier achieved the best
+													performance with <b>95%+ accuracy</b>, outperforming all other
+													models. SVM achieved <b>91% accuracy</b>, KNN <b>90%</b>, Naive
+													Bayes <b>76%</b>, and Logistic Regression <b>74%</b>. All
+													performance metrics demonstrated strong consistency, indicating
+													effective capture of underlying data relationships.</li>
+												<li><b>Skills Gained:</b> Applied <b>data preprocessing techniques</b>
+													including feature engineering and label encoding, implemented and
+													compared <b>multiple ML classification algorithms</b>, performed
+													<b>model evaluation using accuracy, precision, recall, and F1
+														scores</b>, and analyzed performance through <b>confusion
+														matrices</b>.</li>
 											</ul>
 										</li>
 									</ul>
 
 									<ul>
 										<li>
-											<b>Course Research: <a href="https://github.com/badhon495/Student-Performance-Prediction">Student Performance Prediction</a></b> [CSE427: Machine Learning]<br>
+											<b>Course Research: <a
+													href="https://github.com/badhon495/Student-Performance-Prediction">Student
+													Performance Prediction</a></b> [CSE427: Machine Learning]<br>
 											<ul>
-												<li>Built a <b>multi-class classification system</b> to predict student final grades using the Student Performance dataset from Portuguese schools. The project addressed <b>class imbalance</b> through balanced class weights and explored <b>dimensionality reduction with PCA</b> to improve model efficiency while maintaining prediction accuracy.</li>
-												<li><b>Results:</b> Without PCA, <b>Random Forest achieved the highest accuracy at 88%</b>, followed by Decision Tree (86%), SGD Classifier (84%), SVM (81%), and Naive Bayes (75%). With PCA reducing features from 32 to 10 components, Random Forest and Naive Bayes both achieved 81% accuracy, demonstrating effective dimensionality reduction with minimal performance loss.</li>
-												<li><b>Skills Gained:</b> Implemented feature engineering with <b>ordinal encoding and StandardScaler</b>, applied <b>PCA for dimensionality reduction</b>, handled imbalanced datasets using class weights, performed train-test splitting to prevent data leakage, and evaluated models using accuracy, weighted precision, recall, and confusion matrices.</li>
+												<li>Built a <b>multi-class classification system</b> to predict student
+													final grades using the Student Performance dataset from Portuguese
+													schools. The project addressed <b>class imbalance</b> through
+													balanced class weights and explored <b>dimensionality reduction with
+														PCA</b> to improve model efficiency while maintaining prediction
+													accuracy.</li>
+												<li><b>Results:</b> Without PCA, <b>Random Forest achieved the highest
+														accuracy at 88%</b>, followed by Decision Tree (86%), SGD
+													Classifier (84%), SVM (81%), and Naive Bayes (75%). With PCA
+													reducing features from 32 to 10 components, Random Forest and Naive
+													Bayes both achieved 81% accuracy, demonstrating effective
+													dimensionality reduction with minimal performance loss.</li>
+												<li><b>Skills Gained:</b> Implemented feature engineering with
+													<b>ordinal encoding and StandardScaler</b>, applied <b>PCA for
+														dimensionality reduction</b>, handled imbalanced datasets using
+													class weights, performed train-test splitting to prevent data
+													leakage, and evaluated models using accuracy, weighted precision,
+													recall, and confusion matrices.</li>
 											</ul>
 										</li>
 									</ul>
@@ -837,6 +1107,7 @@
 							</tr>
 						</tbody>
 					</table>
+					<div class="section-bottom-indicator" data-section="Research"></div>
 
 
 
@@ -855,23 +1126,32 @@
 													2025 Summer Hackathon</a></b> [2025]<br>
 											<ul>
 												<li>Successfully participated in the month-long freeCodeCamp Community
-													Hackathon, where <b>20 global teams competed</b> to develop <b>real-world,
-													production-ready fullstack applications</b>. The event emphasized
+													Hackathon, where <b>20 global teams competed</b> to develop
+													<b>real-world,
+														production-ready fullstack applications</b>. The event
+													emphasized
 													teamwork, practical software development, and open-source
 													contribution values.</li>
 												<li>My team built <a
 														href="https://github.com/freeCodeCamp-2025-Summer-Hackathon/OpenShelf"><b>OpenShelf</b></a>,
-													a <b>community-driven digital lending library platform</b> for books,
+													a <b>community-driven digital lending library platform</b> for
+													books,
 													tools, and games. The platform was built using <b>Django</b>
 													(backend), <b>React</b> (frontend), <b>Tailwind CSS</b> (styling),
 													and <b>PostgreSQL</b> (database).</li>
 												<li><b>Skills Gained:</b> Strengthened fullstack development skills,
-													improved experience in <b>team-based software engineering</b>, learned
-													<b>advanced Git collaboration workflows</b>, practiced <b>Agile-like sprint
-													planning</b>, and contributed to building a scalable, user-focused
-													product from scratch.</li>
+													improved experience in <b>team-based software engineering</b>,
+													learned
+													<b>advanced Git collaboration workflows</b>, practiced <b>Agile-like
+														sprint
+														planning</b>, and contributed to building a scalable,
+													user-focused
+													product from scratch.
+												</li>
 												<li><b>Live Demo : </b><a href="https://openshelf-seven.vercel.app/"
-														target="_blank">https://openshelf-seven.vercel.app/</a> (Backend hosted on Render free tier — first request might take some time to response.)</li>
+														target="_blank">https://openshelf-seven.vercel.app/</a> (Backend
+													hosted on Render free tier — first request might take some time to
+													response.)</li>
 											</ul>
 										</li>
 									</ul>
@@ -881,8 +1161,17 @@
 													href="https://hacktoberfest.com/about/">Hacktoberfest</a></b>
 											[2025]<br>
 											<ul>
-												<li>Successfully participated in Hacktoberfest 2025 as a <b>Super Contributor</b>, contributing <b>12+ pull requests</b> across <b>multiple open source projects</b>. Earned an <b>exclusive Hacktoberfest T-Shirt</b>, awarded only to the <b>first 10,000 Super Contributors</b> who completed 6 accepted PR/MRs to worthy repositories.</li>
-												<li><b>Skills Gained:</b> Advanced <b>open source collaboration</b> across diverse projects, strengthened <b>Git workflow and PR management skills</b>, enhanced ability to <b>contribute to multiple codebases</b>, and developed expertise in meeting open source contribution standards and best practices.</li>
+												<li>Successfully participated in Hacktoberfest 2025 as a <b>Super
+														Contributor</b>, contributing <b>12+ pull requests</b> across
+													<b>multiple open source projects</b>. Earned an <b>exclusive
+														Hacktoberfest T-Shirt</b>, awarded only to the <b>first 10,000
+														Super Contributors</b> who completed 6 accepted PR/MRs to worthy
+													repositories.</li>
+												<li><b>Skills Gained:</b> Advanced <b>open source collaboration</b>
+													across diverse projects, strengthened <b>Git workflow and PR
+														management skills</b>, enhanced ability to <b>contribute to
+														multiple codebases</b>, and developed expertise in meeting open
+													source contribution standards and best practices.</li>
 												<li>Completion <a
 														href="https://www.holopin.io/hacktoberfest2025/userbadge/cmh9yxboc00isjl04v2tfpmt5"><b>Badge</b></a>
 													of Hacktoberfest 2025.</li>
@@ -896,14 +1185,19 @@
 											[2023]<br>
 											<ul>
 												<li>Successfully participated in Hacktoberfest 2023, a <b>month-long
-													celebration of open source software</b> run by <b>DigitalOcean</b> in
-													partnership with <b>GitHub</b> and <b>Twilio</b>. Made meaningful contributions to
+														celebration of open source software</b> run by
+													<b>DigitalOcean</b> in
+													partnership with <b>GitHub</b> and <b>Twilio</b>. Made meaningful
+													contributions to
 													open source projects by submitting quality pull requests that were
 													merged by project maintainers.</li>
 												<li><b>Skills Gained:</b> Enhanced understanding of <b>open source
-													collaboration</b>, improved <b>Git workflow skills</b>, learned to read and
-													follow <b>contribution guidelines</b>, gained experience in <b>code review
-													processes</b>, and developed skills in <b>identifying and fixing issues</b> in
+														collaboration</b>, improved <b>Git workflow skills</b>, learned
+													to read and
+													follow <b>contribution guidelines</b>, gained experience in <b>code
+														review
+														processes</b>, and developed skills in <b>identifying and fixing
+														issues</b> in
 													existing codebases.</li>
 												<li>Completion <a
 														href="https://www.holopin.io/hacktoberfest2023/hall/@badhon495"><b>Badge</b></a>
@@ -919,15 +1213,22 @@
 											[2023]<br>
 											<ul>
 												<li>Successfully completed the Advent of Cyber 2023, a <b>24-day
-													beginner-friendly security challenge</b> hosted by <b>TryHackMe</b>. Covered
-													various cybersecurity topics including <b>digital forensics</b>, <b>log
-													analysis</b>, <b>OSINT</b> (Open Source Intelligence), <b>packet analysis</b>, <b>web
-													application security</b>, and <b>incident response</b> through <b>hands-on
-													practical exercises</b>.</li>
+														beginner-friendly security challenge</b> hosted by
+													<b>TryHackMe</b>. Covered
+													various cybersecurity topics including <b>digital forensics</b>,
+													<b>log
+														analysis</b>, <b>OSINT</b> (Open Source Intelligence), <b>packet
+														analysis</b>, <b>web
+														application security</b>, and <b>incident response</b> through
+													<b>hands-on
+														practical exercises</b>.</li>
 												<li><b>Skills Gained:</b> Developed foundational cybersecurity skills
-													including <b>network analysis</b>, <b>malware detection</b>, <b>web application
-													penetration testing</b>, <b>log file investigation</b>, <b>digital forensics
-													techniques</b>, and understanding of common attack vectors and defense
+													including <b>network analysis</b>, <b>malware detection</b>, <b>web
+														application
+														penetration testing</b>, <b>log file investigation</b>,
+													<b>digital forensics
+														techniques</b>, and understanding of common attack vectors and
+													defense
 													strategies.</li>
 												<li>Completion <a
 														href="https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-5EONDITDAJ.png"><b>Certificate</b></a>
@@ -942,12 +1243,17 @@
 											[2024]<br>
 											<ul>
 												<li>Participated in Patriot CTF 2024, a <b>competitive cybersecurity
-													Capture the Flag event</b> featuring challenges in <b>web security</b>,
-													<b>cryptography</b>, and <b>forensics</b>. Competed solo and <b>ranked 704 out of
-													1,500 participants</b>.</li>
-												<li><b>Skills Gained:</b> Enhanced <b>problem-solving skills</b>, improved
+														Capture the Flag event</b> featuring challenges in <b>web
+														security</b>,
+													<b>cryptography</b>, and <b>forensics</b>. Competed solo and
+													<b>ranked 704 out of
+														1,500 participants</b>.
+												</li>
+												<li><b>Skills Gained:</b> Enhanced <b>problem-solving skills</b>,
+													improved
 													knowledge of <b>cybersecurity concepts</b>, and gained experience in
-													<b>working under pressure</b> in a competitive environment.</li>
+													<b>working under pressure</b> in a competitive environment.
+												</li>
 												<li>Ranking <a href="images/ctf2024.webp"><b>Screenshot</b></a>
 													of Patriot CTF 2024.</li>
 											</ul>
@@ -994,18 +1300,21 @@
 				</td>
 			</tr>
 	</table>
+	<div class="section-bottom-indicator" data-section="Miscellaneous"></div>
 
 	<!-- Footer Section -->
 	<footer style="background-color: rgba(0, 0, 0, 0.05); padding: 20px 15px; text-align: center; margin-top: 30px;">
 		<p style="margin: 8px 0; font-size: 0.95em;">
-			Want to send me an anonymous message? 
-			<a href="#" id="anonymousMessageFooterLink" style="font-weight: bold; text-decoration: underline;">Click here</a> to share your thoughts anonymously.
+			Want to send me an anonymous message?
+			<a href="#" id="anonymousMessageFooterLink" style="font-weight: bold; text-decoration: underline;">Click
+				here</a> to share your thoughts anonymously.
 		</p>
 		<p style="margin: 8px 0; font-size: 0.85em; color: #666;">
 			<span id="lastModified">Last Modified: November 19, 2025 at 06:54 PM</span>
 		</p>
 		<p style="margin: 8px 0; font-size: 0.85em; color: #666;">
-			Website design inspired by <a href="https://jonbarron.info/" target="_blank" rel="noopener noreferrer">Jon Barron</a>.
+			Website design inspired by <a href="https://jonbarron.info/" target="_blank" rel="noopener noreferrer">Jon
+				Barron</a>.
 		</p>
 	</footer>
 

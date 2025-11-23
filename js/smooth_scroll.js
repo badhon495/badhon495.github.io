@@ -14,8 +14,11 @@ document.addEventListener('DOMContentLoaded', function () {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             
-            // Remove focus from the clicked link
+            // Aggressively remove focus from the clicked link (Chromium mobile fix)
             this.blur();
+            if (document.activeElement === this) {
+                document.activeElement.blur();
+            }
             
             const targetId = this.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
