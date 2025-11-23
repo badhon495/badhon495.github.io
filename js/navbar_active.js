@@ -28,12 +28,6 @@ document.addEventListener('DOMContentLoaded', function () {
     
     // Function to determine the active section
     function determineActiveSection() {
-        console.log('Determining active section:', {
-            scrollY: window.scrollY,
-            visibleSections: Array.from(visibleSections),
-            visibleHeaders: Array.from(visibleHeaders)
-        });
-        
         // If at the very top of the page, always show Bio
         if (window.scrollY < 50) {
             setActiveLink('Bio');
@@ -52,7 +46,6 @@ document.addEventListener('DOMContentLoaded', function () {
             });
             const lastVisibleHeader = visibleHeadersList[visibleHeadersList.length - 1];
             if (lastVisibleHeader) {
-                console.log('Setting active from last visible header:', lastVisibleHeader);
                 setActiveLink(lastVisibleHeader);
                 return;
             }
@@ -62,20 +55,16 @@ document.addEventListener('DOMContentLoaded', function () {
         if (visibleSections.size > 0) {
             const lastVisibleSection = sectionIds.filter(id => visibleSections.has(id)).pop();
             if (lastVisibleSection) {
-                console.log('Setting active from last visible section:', lastVisibleSection);
                 setActiveLink(lastVisibleSection);
                 return;
             }
         }
-        
-        console.log('No sections visible!');
     }
 
     // Observer for bottom indicators (tells us which sections are in viewport)
     const bottomIndicatorObserver = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             const sectionId = entry.target.dataset.section;
-            console.log('Bottom indicator:', sectionId, 'intersecting:', entry.isIntersecting);
             if (entry.isIntersecting) {
                 visibleSections.add(sectionId);
             } else {
@@ -93,7 +82,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const headerObserver = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             const sectionId = entry.target.id;
-            console.log('Header:', sectionId, 'intersecting:', entry.isIntersecting);
             if (entry.isIntersecting) {
                 visibleHeaders.add(sectionId);
             } else {
@@ -143,22 +131,30 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Add click event listeners to all nav links to blur them (fix for Chromium mobile)
+    // Add click event listeners to all nav links
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            // Immediately blur the link to prevent persistent highlighting on Chromium mobile
-            this.blur();
-            
-            // Force removal of focus state
-            if (document.activeElement === this) {
-                document.activeElement.blur();
+            // Manually set active state for the clicked link
+            const href = this.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                const sectionId = href.substring(1);
+                console.log('Clicked section:', sectionId, 'Setting active...');
+                setActiveLink(sectionId);
+                
+                // Verify the class was added
+                setTimeout(() => {
+                    const activeLinks = document.querySelectorAll('.active-section');
+                    console.log('Active links after click:', activeLinks.length, Array.from(activeLinks).map(l => l.textContent));
+                }, 50);
             }
             
-            // Additional fix: temporarily disable pointer events to prevent focus persistence
-            this.style.pointerEvents = 'none';
+            // Blur after a short delay to prevent persistent highlighting on mobile
             setTimeout(() => {
-                this.style.pointerEvents = '';
-            }, 300);
+                this.blur();
+                if (document.activeElement === this) {
+                    document.activeElement.blur();
+                }
+            }, 100);
         });
         
         // Also handle touchend for better mobile support
@@ -168,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (document.activeElement === this) {
                     document.activeElement.blur();
                 }
-            }, 50);
+            }, 100);
         }, { passive: true });
     });
 

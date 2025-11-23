@@ -452,10 +452,9 @@ html.dark-mode .navbar {
   border-bottom: 2px solid #1772d0;
 }
 
-/* Remove selection/focus outline */
+/* Keep focus styling minimal and same as active */
 .navbar a:focus {
   outline: none;
-  color: #1772d0 !important;
 }
 
 .navbar a:focus-visible {
@@ -575,10 +574,9 @@ html.dark-mode .mobile-menu a.active-section {
   border-left-color: #8aadf4;
 }
 
-/* Remove selection/focus outline for mobile menu */
+/* Keep focus styling minimal and same as active */
 .mobile-menu a:focus {
   outline: none;
-  color: #1772d0 !important;
 }
 
 .mobile-menu a:focus-visible {
@@ -599,14 +597,13 @@ html.dark-mode .mobile-menu a.active-section {
   .mobile-menu a:hover {
     background: transparent;
   }
-  
+
   .mobile-menu a:active {
     background: rgba(138, 173, 244, 0.2) !important;
-    color: #1772d0 !important;
   }
-  
+
   .mobile-menu a:focus {
-    color: #1772d0 !important;
+    background: transparent;
   }
   
   .navbar a:hover {
@@ -616,11 +613,10 @@ html.dark-mode .mobile-menu a.active-section {
   
   .navbar a:active {
     background: rgba(138, 173, 244, 0.3) !important;
-    color: #1772d0 !important;
   }
   
   .navbar a:focus {
-    color: #1772d0 !important;
+    background: transparent;
   }
   
   /* Ensure active section styling still works */
@@ -629,27 +625,15 @@ html.dark-mode .mobile-menu a.active-section {
     background: rgba(138, 173, 244, 0.3);
   }
   
-  /* Dark mode colors for touch devices */
-  html.dark-mode .navbar a:active,
-  html.dark-mode .navbar a:focus {
-    color: #8aadf4 !important;
-  }
-  
+  /* Dark mode for touch devices */
   html.dark-mode .navbar a:active {
     background: rgba(138, 173, 244, 0.25) !important;
-  }
-  
-  html.dark-mode .mobile-menu a:active,
-  html.dark-mode .mobile-menu a:focus {
-    color: #8aadf4 !important;
   }
   
   html.dark-mode .mobile-menu a:active {
     background: rgba(138, 173, 244, 0.2) !important;
   }
-}
-
-@media screen and (max-width: 1024px) {
+}@media screen and (max-width: 1024px) {
   .hamburger {
     display: flex;
     order: 10;
@@ -678,6 +662,18 @@ html.dark-mode .mobile-menu a.active-section {
   
   .navbar a:not(.nav-desktop) {
     flex: 1;
+  }
+  
+  /* Ensure active section styling is visible on mobile navbar */
+  .navbar a.active-section {
+    background: rgba(138, 173, 244, 0.3) !important;
+    border-bottom: 2px solid #1772d0 !important;
+    font-weight: 700 !important;
+  }
+  
+  html.dark-mode .navbar a.active-section {
+    background: rgba(138, 173, 244, 0.25) !important;
+    border-bottom-color: #8aadf4 !important;
   }
   
   .navbar-separator {
