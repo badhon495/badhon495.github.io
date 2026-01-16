@@ -51,6 +51,36 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
         
+        // Fallback: Check which section we're actually in based on scroll position
+        // This is important for when headers aren't visible (between sections)
+        // Find the section header that's closest to the top of the viewport but still visible
+        let closestSection = null;
+        let closestDistance = Infinity;
+        
+        for (let i = 0; i < sectionIds.length; i++) {
+            const sectionId = sectionIds[i];
+            const elementId = sectionId === 'Bio' ? 'Bio-header' : sectionId;
+            const element = document.getElementById(elementId);
+            
+            if (element) {
+                const rect = element.getBoundingClientRect();
+                // Check if header is above the middle of viewport
+                if (rect.top < window.innerHeight / 2) {
+                    // Calculate distance from the top - we want the one closest to top (most negative or smallest positive)
+                    const distance = Math.abs(rect.top - 100); // 100px is roughly navbar height + padding
+                    if (distance < closestDistance) {
+                        closestDistance = distance;
+                        closestSection = sectionId;
+                    }
+                }
+            }
+        }
+        
+        if (closestSection) {
+            setActiveLink(closestSection);
+            return;
+        }
+        
         // If no headers visible but sections are, use the last visible section
         if (visibleSections.size > 0) {
             const lastVisibleSection = sectionIds.filter(id => visibleSections.has(id)).pop();
@@ -79,6 +109,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Observer for section headers (h2 elements)
+    // Use different rootMargin for mobile vs desktop for better detection
+    const isMobile = window.innerWidth <= 1024;
     const headerObserver = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             const sectionId = entry.target.id;
@@ -91,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
         determineActiveSection();
     }, {
         root: null,
-        rootMargin: '-60px 0px -80% 0px', // More strict: only visible in top 20% of viewport
+        rootMargin: isMobile ? '-60px 0px -40% 0px' : '-60px 0px -50% 0px', // More lenient on mobile
         threshold: 0
     });
 
