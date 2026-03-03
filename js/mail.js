@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', function (event) {
         event.preventDefault();
         const formData = new FormData(form);
-        fetch('https://formsubmit.co/ajax/badhon495@gmail.com', {
+        fetch('https://formsubmit.co/ajax/fb2406a368c06f406514c9a5eb690986', {
             method: 'POST',
             body: formData,
         })
