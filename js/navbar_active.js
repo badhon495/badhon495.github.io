@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Get all section headings with IDs and navbar links
-    const sectionIds = ['Bio', 'Education', 'Project', 'Experience', 'Research', 'Technical_Skill', 'Miscellaneous'];
+    const sectionIds = ['Bio', 'Experience', 'Education', 'Project', 'Research', 'Technical_Skill', 'Miscellaneous'];
     const navLinks = document.querySelectorAll('.navbar a[href^="#"], .mobile-menu a[href^="#"]');
 
     // Function to remove active class from all links
