@@ -47,6 +47,14 @@
 		}
 		// Prevent FOUC by setting body visibility
 		document.documentElement.style.visibility = 'visible';
+
+		// Prevent the browser from jumping to the hash anchor on load so we can
+		// animate from the top instead. Store the hash, strip it from the URL.
+		if (window.location.hash && window.location.hash !== '#Bio') {
+			history.scrollRestoration = 'manual';
+			window._pendingScrollHash = window.location.hash.substring(1);
+			history.replaceState(null, '', window.location.pathname + window.location.search);
+		}
 	</script>
 
 	<script src="js/dark_mode.js" defer></script>
@@ -1389,20 +1397,26 @@
 	</table>
 	<div class="section-bottom-indicator" data-section="Miscellaneous"></div>
 
+	<script>
+		document.getElementById('footerSocialLink').addEventListener('click', function () {
+			sessionStorage.setItem('scrollFromBottom', '1');
+		});
+	</script>
+
 	<!-- Footer Section -->
-	<footer style="background-color: rgba(0, 0, 0, 0.05); padding: 20px 15px; text-align: center; margin-top: 30px;">
+	<footer style="background-color: rgba(0, 0, 0, 0.05); padding: 10px 15px; text-align: center; margin-top: 15px;">
 		<p style="margin: 8px 0; font-size: 0.95em;">
-			Want to send me an anonymous message?
-			<a href="#" id="anonymousMessageFooterLink" style="font-weight: bold; text-decoration: underline;">Click
-				here</a> to share your thoughts anonymously.
+			<a href="#" id="anonymousMessageFooterLink" style="font-weight: bold; text-decoration: underline;">Anonymous Message</a>
+			&nbsp;|&nbsp;
+			<a href="/social.html" id="footerSocialLink" style="font-weight: bold; text-decoration: underline;">Social Media</a>
 		</p>
 		<p style="margin: 8px 0; font-size: 0.85em; color: #666;">
 			<span id="lastModified">Last Modified: November 19, 2025 at 06:54 PM</span>
 		</p>
-		<p style="margin: 8px 0; font-size: 0.85em; color: #666;">
+		<!-- <p style="margin: 8px 0; font-size: 0.85em; color: #666;">
 			Website design inspired by <a href="https://jonbarron.info/" target="_blank" rel="noopener noreferrer">Jon
 				Barron</a>.
-		</p>
+		</p> -->
 	</footer>
 
 </html>
