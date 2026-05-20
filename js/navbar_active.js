@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', function() {
         clearTimeout(scrollTimeout);
         scrollTimeout = setTimeout(determineActiveSection, 50);
-    });
+    }, { passive: true });
 
     // Handle hash changes (when clicking links)
     window.addEventListener('hashchange', function() {
@@ -170,14 +170,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const href = this.getAttribute('href');
             if (href && href.startsWith('#')) {
                 const sectionId = href.substring(1);
-                console.log('Clicked section:', sectionId, 'Setting active...');
                 setActiveLink(sectionId);
-                
-                // Verify the class was added
-                setTimeout(() => {
-                    const activeLinks = document.querySelectorAll('.active-section');
-                    console.log('Active links after click:', activeLinks.length, Array.from(activeLinks).map(l => l.textContent));
-                }, 50);
             }
             
             // Blur after a short delay to prevent persistent highlighting on mobile

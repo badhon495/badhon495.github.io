@@ -46,6 +46,7 @@ class SiteFooter extends HTMLElement {
         <h2>Anonymous Message</h2>
         <form action="https://formsubmit.co/ajax/fb2406a368c06f406514c9a5eb690986" method="post">
             <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
             <div class="form-group">
                 <label for="popup-name">Name</label>
                 <input type="text" id="popup-name" name="name" placeholder="Any name you want me to call you">
@@ -59,7 +60,7 @@ class SiteFooter extends HTMLElement {
                 <textarea id="popup-message" name="message" placeholder="Say all the things you want" required></textarea>
             </div>
             <div class="form-group">
-                <input type="submit" value="Sent">
+                <input type="submit" value="Send">
             </div>
         </form>
     </div>

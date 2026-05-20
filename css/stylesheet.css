@@ -39,7 +39,7 @@ html.dark-mode footer p {
   z-index: 9999 !important;
   font-size: 40px;
   cursor: pointer;
-  transition: all 0.3s ease !important;
+  transition: color 0.3s ease, transform 0.3s ease !important;
   background: transparent !important;
   border: none !important;
   outline: none !important;
@@ -292,9 +292,10 @@ ul.extra_gap li {
 }
 
 .footer-section {
-  padding: 1px; 
+  padding: 1px;
   margin: 1px;
 }
+
 
 /* Only minimal responsive fixes for profile section and dark mode toggle */
 @media screen and (max-width: 768px) {
@@ -410,6 +411,7 @@ table {
   margin: 0;
   transform: translateY(0);
   transition: transform 0.3s ease-in-out;
+  will-change: transform;
 }
 
 .navbar.navbar-hidden {
@@ -436,7 +438,7 @@ html.dark-mode .navbar {
   text-decoration: none;
   padding: 6px 12px;
   border-radius: 5px;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
   font-weight: 500;
   font-size: 1.05em;
   white-space: nowrap;
@@ -505,7 +507,7 @@ html.dark-mode .navbar-separator {
   height: 3px;
   background-color: #1772d0;
   margin: 3px 0;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
   border-radius: 3px;
 }
 
