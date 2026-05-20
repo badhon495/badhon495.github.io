@@ -30,6 +30,10 @@
 		type="font/woff2" crossorigin>
 
 	<link rel="stylesheet" type="text/css" href="css/stylesheet.min.css">
+	<link rel="stylesheet" type="text/css" href="css/mail.css" media="print" onload="this.media='all'">
+	<noscript>
+		<link rel="stylesheet" type="text/css" href="css/mail.css">
+	</noscript>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
 		media="print" onload="this.media='all'" />
 	<noscript>
@@ -54,6 +58,8 @@
 	</script>
 
 	<script src="js/dark_mode.js" defer></script>
+	<script src="js/mail.js" defer></script>
+	<script src="js/last_modified.js" defer></script>
 	<script src="js/hamburger.js" defer></script>
 	<script src="js/navbar_scroll.js" defer></script>
 
@@ -186,8 +192,6 @@
 			<a href="/#Research" class="nav-link nav-desktop">Research</a>
 			<span class="navbar-separator">|</span>
 			<a href="/#Miscellaneous" class="nav-link nav-desktop">Miscellaneous</a>
-			<span class="navbar-separator">|</span>
-			<a href="/social.html" class="nav-link active-section">Social Media</a>
 		</div>
 
 		<div class="mobile-menu" id="mobileMenu">
@@ -195,7 +199,6 @@
 			<a href="/#Research">Research</a>
 			<a href="/#Technical_Skill">Technical Skill</a>
 			<a href="/#Miscellaneous">Miscellaneous</a>
-			<a href="/social.html">Social Media</a>
 		</div>
 	</nav>
 
@@ -348,13 +351,49 @@
 		}
 	</script>
 
-	<!-- Footer -->
-	<footer style="background-color:rgba(0,0,0,0.05);padding:20px 15px;text-align:center;margin-top:30px;">
-		<p style="margin:8px 0;font-size:0.85em;color:#666;">
-			<a href="/" style="font-weight:bold;">Back to Portfolio</a>
+	<script>
+		document.getElementById('footerSocialLink').addEventListener('click', function () {
+			sessionStorage.setItem('scrollFromBottom', '1');
+		});
+	</script>
+
+	<div class="popup-overlay">
+		<div class="popup-content">
+			<span class="popup-close">&times;</span>
+			<h2>Anonymous Message</h2>
+			<form action="https://formsubmit.co/ajax/fb2406a368c06f406514c9a5eb690986" method="post">
+				<input type="hidden" name="_captcha" value="false">
+				<div class="form-group">
+					<label for="popup-name">Name</label>
+					<input type="text" id="popup-name" name="name"
+						placeholder="Any name you want me to call you">
+				</div>
+				<div class="form-group">
+					<label for="popup-email">Email</label>
+					<input type="email" id="popup-email" name="email"
+						placeholder="If you want me to reply">
+				</div>
+				<div class="form-group">
+					<label for="popup-message">Message (required)</label>
+					<textarea id="popup-message" name="message"
+						placeholder="Say all the things you want" required></textarea>
+				</div>
+				<div class="form-group">
+					<input type="submit" value="Sent">
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<!-- Footer Section -->
+	<footer style="background-color: rgba(0, 0, 0, 0.05); padding: 10px 15px; text-align: center; margin-top: 15px;">
+		<p style="margin: 8px 0; font-size: 0.95em;">
+			<a href="#" id="anonymousMessageFooterLink" style="font-weight: bold; text-decoration: underline;">Anonymous Message</a>
+			&nbsp;|&nbsp;
+			<a href="/social.html" id="footerSocialLink" style="font-weight: bold; text-decoration: underline;">Social Media</a>
 		</p>
-		<p style="margin:8px 0;font-size:0.85em;color:#666;">
-			Website design inspired by <a href="https://jonbarron.info/" target="_blank" rel="noopener noreferrer">Jon Barron</a>.
+		<p style="margin: 8px 0; font-size: 0.85em; color: #666;">
+			<span id="lastModified">Last Modified: November 19, 2025 at 06:54 PM</span>
 		</p>
 	</footer>
 
