@@ -67,11 +67,13 @@
 		document.documentElement.style.visibility = 'visible';
 
 		// Prevent the browser from jumping to the hash anchor on load so we can
-		// animate from the top instead. Store the hash, strip it from the URL.
-		if (window.location.hash && window.location.hash !== '#Bio') {
+		// animate from the top instead. Store the hash, strip it from the URL,
+		// and keep the page hidden until our animation is ready to start.
+		if (window.location.hash) {
 			history.scrollRestoration = 'manual';
 			window._pendingScrollHash = window.location.hash.substring(1);
 			history.replaceState(null, '', window.location.pathname + window.location.search);
+			document.documentElement.style.visibility = 'hidden';
 		}
 	</script>
 
