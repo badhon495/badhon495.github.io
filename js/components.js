@@ -8,7 +8,7 @@ class SiteNavbar extends HTMLElement {
         this.innerHTML = `
 <nav class="navbar">
     <div class="navbar-container">
-        <button class="hamburger" id="hamburger" aria-label="Menu">
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
@@ -42,10 +42,10 @@ class SiteFooter extends HTMLElement {
         this.innerHTML = `
 <div class="popup-overlay">
     <div class="popup-content">
-        <span class="popup-close">&times;</span>
+        <button class="popup-close" aria-label="Close message form">&times;</button>
         <h2>Anonymous Message</h2>
         <form action="https://formsubmit.co/ajax/fb2406a368c06f406514c9a5eb690986" method="post">
-            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_captcha" value="true">
             <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
             <div class="form-group">
                 <label for="popup-name">Name</label>
@@ -55,7 +55,7 @@ class SiteFooter extends HTMLElement {
                 <label for="popup-email">Email</label>
                 <input type="email" id="popup-email" name="email" placeholder="If you want me to reply">
             </div>
-            <div class="form-group">
+            <div class="form-group textarea-group">
                 <label for="popup-message">Message (required)</label>
                 <textarea id="popup-message" name="message" placeholder="Say all the things you want" required></textarea>
             </div>
@@ -74,7 +74,7 @@ class SiteFooter extends HTMLElement {
         <a href="https://github.com/badhon495/academic-portfolio" target="_blank" rel="noopener noreferrer" style="font-weight:bold;text-decoration:underline;">Source Code</a>
     </p>
     <p style="margin:8px 0;font-size:0.85em;color:#666;">
-        <span id="lastModified">Last Modified: November 19, 2025 at 06:54 PM</span>
+        <span id="lastModified">Last Modified: May 23, 2026 at 12:00 AM</span>
     </p>
 </footer>`;
 

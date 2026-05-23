@@ -110,42 +110,50 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Observer for section headers (h2 elements)
     // Use different rootMargin for mobile vs desktop for better detection
-    const isMobile = window.innerWidth <= 1024;
-    const headerObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            const sectionId = entry.target.id;
-            if (entry.isIntersecting) {
-                visibleHeaders.add(sectionId);
-            } else {
-                visibleHeaders.delete(sectionId);
-            }
+    const mobileBreakpoint = window.matchMedia('(max-width: 1024px)');
+    let headerObserver = null;
+
+    function createHeaderObserver(isMobile) {
+        if (headerObserver) {
+            headerObserver.disconnect();
+            visibleHeaders.clear();
+        }
+        headerObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                const sectionId = entry.target.id;
+                if (entry.isIntersecting) {
+                    visibleHeaders.add(sectionId);
+                } else {
+                    visibleHeaders.delete(sectionId);
+                }
+            });
+            determineActiveSection();
+        }, {
+            root: null,
+            rootMargin: isMobile ? '-60px 0px -40% 0px' : '-60px 0px -50% 0px',
+            threshold: 0
         });
-        determineActiveSection();
-    }, {
-        root: null,
-        rootMargin: isMobile ? '-60px 0px -40% 0px' : '-60px 0px -50% 0px', // More lenient on mobile
-        threshold: 0
-    });
+
+        const bioHeader = document.getElementById('Bio-header');
+        if (bioHeader) headerObserver.observe(bioHeader);
+        sectionIds.slice(1).forEach(id => {
+            const header = document.getElementById(id);
+            if (header) headerObserver.observe(header);
+        });
+    }
+
+    createHeaderObserver(mobileBreakpoint.matches);
+
+    if (mobileBreakpoint.addEventListener) {
+        mobileBreakpoint.addEventListener('change', e => createHeaderObserver(e.matches));
+    } else {
+        mobileBreakpoint.addListener(e => createHeaderObserver(e.matches));
+    }
 
     // Observe all bottom indicators
     const bottomIndicators = document.querySelectorAll('.section-bottom-indicator');
     bottomIndicators.forEach(indicator => {
         bottomIndicatorObserver.observe(indicator);
-    });
-
-    // Observe all section headers
-    // For Bio, observe the name element instead of the entire table
-    const bioHeader = document.getElementById('Bio-header');
-    if (bioHeader) {
-        headerObserver.observe(bioHeader);
-    }
-    
-    // Observe h2 headers for other sections
-    sectionIds.slice(1).forEach(id => {
-        const header = document.getElementById(id);
-        if (header) {
-            headerObserver.observe(header);
-        }
     });
     
     // Add scroll listener for top of page detection

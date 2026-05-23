@@ -28,15 +28,24 @@
 	<meta property="og:title" content="Md Sakib Sadman Badhon — Portfolio">
 	<meta property="og:description" content="CS graduate from BRAC University. Trainee Software Engineer, open-source maintainer, and builder of tools used by 10,000+ monthly users.">
 	<meta property="og:image" content="https://badhon495.github.io/images/badhon_profilePic.webp">
+	<meta property="og:locale" content="en_US">
 
 	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Md Sakib Sadman Badhon — Portfolio">
 	<meta name="twitter:description" content="CS graduate from BRAC University. Trainee Software Engineer, open-source maintainer, and builder of tools used by 10,000+ monthly users.">
 	<meta name="twitter:image" content="https://badhon495.github.io/images/badhon_profilePic.webp">
+	<meta name="twitter:creator" content="@badhon495">
 
 	<!-- Security -->
 	<meta name="referrer" content="strict-origin-when-cross-origin">
+	<meta http-equiv="Content-Security-Policy"
+		content="default-src 'self';
+				 script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com;
+				 style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net;
+				 font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net;
+				 img-src 'self' data: https:;
+				 connect-src 'self' https://formsubmit.co https://www.google-analytics.com;">
 
 	<!-- Preconnect to external domains -->
 	<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -46,6 +55,8 @@
 	<link rel="preload" href="js/components.js" as="script">
 	<link rel="preload" href="css/stylesheet.min.css" as="style">
 	<link rel="preload" href="https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wXiWtFCc.woff2" as="font"
+		type="font/woff2" crossorigin>
+	<link rel="preload" href="https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwiPGQ3q5d0.woff2" as="font"
 		type="font/woff2" crossorigin>
 
 	<link rel="stylesheet" type="text/css" href="css/stylesheet.min.css">
@@ -77,7 +88,6 @@
 	</script>
 
 	<script src="js/components.js"></script>
-	<script src="js/dark_mode.js" defer></script>
 	<script src="js/mail.js" defer></script>
 	<script src="js/last_modified.js" defer></script>
 	<script src="js/hamburger.js" defer></script>
@@ -87,9 +97,11 @@
 	<script src="js/smooth_scroll.js" defer></script>
 	<script src="js/cross_page_scroll.js" defer></script>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+		integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous"
 		media="print" onload="this.media='all'" />
 	<noscript>
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+			integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous" />
 	</noscript>
 
 	<!-- Favicon and App Icons -->
@@ -125,7 +137,7 @@
 		"@context": "https://schema.org",
 		"@type": "Person",
 		"name": "Md Sakib Sadman Badhon",
-		"url": "https://badhon495.github.io",
+		"url": "https://badhon495.github.io/",
 		"image": "https://badhon495.github.io/images/badhon_profilePic.webp",
 		"jobTitle": "Trainee Software Engineer",
 		"worksFor": {
@@ -156,10 +168,11 @@
 </head>
 
 <body>
+	<a href="#main-content" class="skip-link">Skip to main content</a>
 	<site-navbar></site-navbar>
 
-	<!-- <i class="bi bi-brightness-high-fill" id="toggleDark"></i> -->
-	<table class="section" id="Bio" style="margin-top: 30px;">
+<span id="main-content"></span>
+<table class="section" id="Bio" style="margin-top: 30px;">
 		<tbody>
 			<tr style="padding:0px">
 				<td>
@@ -175,10 +188,10 @@
 												src="images/badhon_profilePic.webp" class="hoverZoomLink"
 												loading="eager" decoding="async" width="300" height="300"></a>
 									</div> <!-- Name -->
-									<p class="name" id="Bio-header"
+									<h1 class="name" id="Bio-header"
 										style="text-align:center; font-size:2.5em; margin-top: 10px; margin-bottom: 5px;">
 										Md Sakib Sadman Badhon
-									</p>
+									</h1>
 
 									<!-- Links -->
 									<p
@@ -212,7 +225,6 @@
 								<td class="sub-section">
 									<h2 id="Experience">Experience</h2>
 
-									<p style="text-align: justify;">
 									<ul>
 										<li>
 											<b>Trainee Software Engineer</b> [April 2026 - ] <br>
@@ -332,7 +344,7 @@
 													professional and
 														effective manner.
 												</li>
-												<li><b>Responsibilities</b> : Communicating with Customers, Processing
+												<li><b>Responsibilities</b>: Communicating with Customers, Processing
 													Orders, and Managing Online Community Engagement</li>
 											</ul>
 										</li>
@@ -350,7 +362,7 @@
 													to
 													financial constraints.
 												</li>
-												<li><b>Responsibilities</b> : Authored <b>10+ articles</b>
+												<li><b>Responsibilities</b>: Authored <b>10+ articles</b>
 													(Generated <b>5,000+ views</b>), covering emerging tech trends and
 													innovations.
 												</li>
@@ -370,14 +382,13 @@
 							<tr>
 								<td class="sub-section">
 									<h2 id="Education">Education & Certification</h2>
-									<p style="text-align: justify;">
 									<ul>
 										<li>
 											<b>Completed Bachelor of Science in <a
 												href="https://www.bracu.ac.bd/avilable-program/bachelor-science-computer-science-cs">Computer
 												Science</a></b> [2026]
 											<br>
-											<a href="https://www.bracu.ac.bd/">Brac University, Bangladesh</a> <br>
+											<a href="https://www.bracu.ac.bd/">BRAC University, Bangladesh</a> <br>
 											<ul>
 												<li>CGPA : <b>3.74/4.00</b> (High Distinction)</li>
 												<li>Recognized on the <a
@@ -408,7 +419,7 @@
 									</ul>
 									<ul>
 										<li><b>Completed <a href="https://coursera.org/share/44fd8f381cb39ac45892569cdf6f7674">Google
-												Google Cybersecurity Professional Certificate</a></b> [2023]<br>
+												Cybersecurity Professional Certificate</a></b> [2023]<br>
 											<ul>
 												<li> Acquired the skill to recognize and address common threats, risks,
 													and vulnerabilities</li>
@@ -609,7 +620,6 @@
 							<tr>
 								<td class="sub-section">
 									<h2 id="Project">Project</h2>
-									<p style="text-align: justify;">
 									<ul class="extra_gap">
 										<li>
 											<b><a href="https://github.com/badhon495/just-apply">Just Apply</a></b> [2026]<br>
@@ -761,7 +771,7 @@
 													University students calculate their CGPA and view their academic
 													progress. Built with HTML, CSS and JavaScript, it features
 													dynamic
-													semester addition, grade calculation with the Brac University
+													semester addition, grade calculation with the BRAC University
 													grading system, and a clean, responsive interface.</li>
 												<li><b>Impact</b> : Scaled to <b>10,000+ monthly active users</b>,
 													making it the most widely-used academic tool among BRAC University
@@ -828,7 +838,7 @@
 												<li><b>Live Demo</b> : <a href="https://nirapod.netlify.app/"
 														target="_blank" rel="noopener noreferrer">https://nirapod.netlify.app/</a> (Backend hosted
 													on Render free tier — first request might take some time to
-													response.)</li>
+													respond.)</li>
 											</ul>
 										</li>
 									</ul>
@@ -1058,7 +1068,6 @@
 							<tr>
 								<td class="sub-section">
 									<h2 id="Technical_Skill">Technical Skill</h2>
-									<p style="text-align: justify;">
 									<ul class="extra_gap">
 										<li><b>Languages and Frameworks</b>: HTML, JavaScript, Laravel, Spring Boot, React, PostgreSQL, MySQL, Python, MATLAB, LaTeX, Bash, C</li>
 										<li><b>Library</b>: TensorFlow, Pandas, NumPy, Matplotlib</li>
@@ -1079,7 +1088,6 @@
 							<tr>
 								<td class="sub-section">
 									<h2 id="Research">Research</h2>
-									<p style="text-align: justify;">
 									<ul>
 										<li>
 											<b>Undergraduate Thesis:</b> <b><a
@@ -1211,10 +1219,6 @@
 							<tr>
 								<td class="sub-section">
 									<h2 id="Miscellaneous">Miscellaneous</h2>
-									<p style="text-align: justify;">
-
-
-
 									<ul>
 										<li><b>Participated in <a
 												href="https://github.com/freeCodeCamp-2025-Summer-Hackathon">freeCodeCamp
@@ -1246,7 +1250,7 @@
 												<li><b>Live Demo</b> : <a href="https://openshelf-seven.vercel.app/"
 														target="_blank" rel="noopener noreferrer">https://openshelf-seven.vercel.app/</a> (Backend
 													hosted on Render free tier — first request might take some time to
-													response.)</li>
+													respond.)</li>
 											</ul>
 										</li>
 									</ul>

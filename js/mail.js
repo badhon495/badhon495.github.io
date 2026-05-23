@@ -1,39 +1,71 @@
 document.addEventListener('DOMContentLoaded', function () {
     const popupOverlay = document.querySelector('.popup-overlay');
     const popupClose = document.querySelector('.popup-close');
-    const anonymousMessageLink = document.querySelector('#anonymousMessageLink');
     const anonymousMessageFooterLink = document.querySelector('#anonymousMessageFooterLink');
     const form = document.querySelector('.popup-content form');
+    if (!form) return;
     const submitButton = form.querySelector('input[type="submit"]');
 
-    // Handle click for profile section link
-    if (anonymousMessageLink) {
-        anonymousMessageLink.addEventListener('click', function (event) {
-            event.preventDefault();
-            popupOverlay.style.display = 'flex';
-        });
+    function openPopup() {
+        popupOverlay.classList.add('is-open');
+        const firstFocusable = popupOverlay.querySelector('input, textarea, button');
+        if (firstFocusable) firstFocusable.focus();
+    }
+
+    function closePopup() {
+        popupOverlay.classList.remove('is-open');
+        form.reset();
+        submitButton.value = 'Send';
+        submitButton.disabled = false;
+        if (anonymousMessageFooterLink) anonymousMessageFooterLink.focus();
     }
 
     // Handle click for footer link
     if (anonymousMessageFooterLink) {
         anonymousMessageFooterLink.addEventListener('click', function (event) {
             event.preventDefault();
-            popupOverlay.style.display = 'flex';
+            openPopup();
         });
     }
 
-    popupClose.addEventListener('click', function () {
-        popupOverlay.style.display = 'none';
-    });
+    popupClose.addEventListener('click', closePopup);
 
     window.addEventListener('click', function (event) {
         if (event.target === popupOverlay) {
-            popupOverlay.style.display = 'none';
+            closePopup();
+        }
+    });
+
+    // Trap focus within popup
+    popupOverlay.addEventListener('keydown', function (event) {
+        if (!popupOverlay.classList.contains('is-open')) return;
+        if (event.key === 'Escape') {
+            closePopup();
+            return;
+        }
+        if (event.key !== 'Tab') return;
+        const focusable = Array.from(popupOverlay.querySelectorAll('input, textarea, button, [tabindex]:not([tabindex="-1"])'))
+            .filter(el => !el.disabled && el.offsetParent !== null);
+        if (focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey) {
+            if (document.activeElement === first) {
+                event.preventDefault();
+                last.focus();
+            }
+        } else {
+            if (document.activeElement === last) {
+                event.preventDefault();
+                first.focus();
+            }
         }
     });
 
     form.addEventListener('submit', function (event) {
         event.preventDefault();
+        submitButton.value = 'Sending…';
+        submitButton.disabled = true;
         const formData = new FormData(form);
         fetch('https://formsubmit.co/ajax/fb2406a368c06f406514c9a5eb690986', {
             method: 'POST',
@@ -44,9 +76,15 @@ document.addEventListener('DOMContentLoaded', function () {
             if (data.success) {
                 form.reset();
                 submitButton.value = 'Delivered';
-                submitButton.disabled = true;
+                setTimeout(closePopup, 1500);
+            } else {
+                submitButton.value = 'Send';
+                submitButton.disabled = false;
             }
         })
-        .catch(error => console.error('Error:', error));
+        .catch(() => {
+            submitButton.value = 'Send';
+            submitButton.disabled = false;
+        });
     });
 });

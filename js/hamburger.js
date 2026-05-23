@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
         hamburger.addEventListener('click', function () {
             hamburger.classList.toggle('active');
             mobileMenu.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', mobileMenu.classList.contains('active'));
         });
 
         // Close menu when a link is clicked
@@ -14,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
             link.addEventListener('click', function (e) {
                 hamburger.classList.remove('active');
                 mobileMenu.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
                 
                 // Remove focus and blur to prevent persistent highlighting on mobile
                 this.blur();
@@ -33,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!hamburger.contains(event.target) && !mobileMenu.contains(event.target)) {
                 hamburger.classList.remove('active');
                 mobileMenu.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
             }
         });
         
@@ -44,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!e.matches) {
                 hamburger.classList.remove('active');
                 mobileMenu.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
             }
         }
         

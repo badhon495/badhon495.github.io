@@ -1,6 +1,9 @@
 {
   "name": "Md Sakib Sadman Badhon",
   "short_name": "Badhon",
+  "description": "Portfolio of Md Sakib Sadman Badhon — CS graduate, Software Engineer, and open-source contributor.",
+  "start_url": "/",
+  "scope": "/",
   "icons": [
     {
       "src": "/images/android-chrome-192x192.png",
