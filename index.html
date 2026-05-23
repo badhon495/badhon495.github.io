@@ -52,6 +52,7 @@
 	<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 
 	<!-- Preload critical resources -->
+	<link rel="preload" href="images/badhon_profilePic.webp" as="image" type="image/webp">
 	<link rel="preload" href="js/components.js" as="script">
 	<link rel="preload" href="css/stylesheet.min.css" as="style">
 	<link rel="preload" href="https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wXiWtFCc.woff2" as="font"
@@ -186,7 +187,7 @@
 												style="width:300px;max-width:100%;object-fit: cover; border-radius: 50%;"
 												alt="Profile photo of Md Sakib Sadman Badhon"
 												src="images/badhon_profilePic.webp" class="hoverZoomLink"
-												loading="eager" decoding="async" width="300" height="300"></a>
+												loading="eager" decoding="async" fetchpriority="high" width="300" height="300"></a>
 									</div> <!-- Name -->
 									<h1 class="name" id="Bio-header"
 										style="text-align:center; font-size:2.5em; margin-top: 10px; margin-bottom: 5px;">
