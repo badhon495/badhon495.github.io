@@ -167,12 +167,27 @@ permalink: /social
 			color: #f09228;
 		}
 
+		.letterboxd-dots {
+			display: flex;
+			gap: 4px;
+		}
+
+		.letterboxd-dot {
+			width: 7px;
+			height: 7px;
+			border-radius: 50%;
+		}
+
+		.letterboxd-green { background: #00e054; }
+		.letterboxd-orange { background: #ff8c00; }
+		.letterboxd-blue { background: #40bcf4; }
+
 		/* platform colours */
 		.icon-facebook   { background: #1877f2; }
 		.icon-instagram  { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
 		.icon-reddit     { background: #ff4500; }
 		.icon-discord    { background: #5865f2; }
-		.icon-letterboxd { background: #00c030; }
+		.icon-letterboxd { background: #1c222b; }
 		.icon-pinterest  { background: #e60023; }
 		.icon-playgames  { background: #1a73e8; }
 		.icon-telegram   { background: #2aabee; }
@@ -259,8 +274,12 @@ permalink: /social
 						</a>
 
 						<a class="social-item" href="https://letterboxd.com/badhon495/" target="_blank" rel="noopener noreferrer">
-							<div class="social-icon icon-letterboxd" style="font-size:13px;font-weight:900;letter-spacing:-1px;">
-								LB
+							<div class="social-icon icon-letterboxd" aria-hidden="true">
+								<span class="letterboxd-dots">
+									<span class="letterboxd-dot letterboxd-green"></span>
+									<span class="letterboxd-dot letterboxd-orange"></span>
+									<span class="letterboxd-dot letterboxd-blue"></span>
+								</span>
 							</div>
 							<span class="social-name">Letterboxd</span>
 							<span class="social-url">https://letterboxd.com/badhon495/</span>
