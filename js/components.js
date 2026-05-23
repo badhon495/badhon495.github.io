@@ -67,7 +67,7 @@ class SiteFooter extends HTMLElement {
 </div>
 <footer style="background-color:rgba(0,0,0,0.05);padding:10px 15px;text-align:center;margin-top:15px;">
     <p style="margin:8px 0;font-size:0.95em;">
-          <a href="/social.html" id="footerSocialLink" style="font-weight:bold;text-decoration:underline;">Social Media</a>
+          <a href="/social" id="footerSocialLink" style="font-weight:bold;text-decoration:underline;">Social Media</a>
         &nbsp;|&nbsp;
           <a href="#" id="anonymousMessageFooterLink" style="font-weight:bold;text-decoration:underline;">Anonymous Message</a>
         &nbsp;|&nbsp;
