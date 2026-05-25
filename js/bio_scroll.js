@@ -6,11 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             
-            // Scroll to the top of the page
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            animatedScrollTo(0, 800);
             
             // Update URL hash
             history.pushState(null, null, '#Bio');
