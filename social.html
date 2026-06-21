@@ -88,15 +88,14 @@ permalink: /social
 				document.documentElement.classList.add('dark-mode');
 			}
 		})();
-		// If arriving via the footer Social Media link, keep page hidden until
-		// we've jumped to the bottom — then we reveal and animate up to top.
+		// Keep page hidden until profile picture loads (see script at end of body)
+		document.documentElement.style.visibility = 'hidden';
+		// If arriving via the footer Social Media link, track that so we can
+		// jump to the bottom and animate up after the image gate passes.
 		if (sessionStorage.getItem('scrollFromBottom') === '1') {
 			sessionStorage.removeItem('scrollFromBottom');
 			history.scrollRestoration = 'manual';
 			window._scrollFromBottom = true;
-			document.documentElement.style.visibility = 'hidden';
-		} else {
-			document.documentElement.style.visibility = 'visible';
 		}
 	</script>
 
@@ -400,32 +399,98 @@ permalink: /social
 	</table>
 
 	<script>
-		if (window._scrollFromBottom) {
+		(function () {
+			function easeInOutCubic(t) {
+				return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+			}
+
+			function showPlaceholder(img) {
+				var placeholder = document.createElement('div');
+				placeholder.setAttribute('aria-label', 'Profile Picture');
+				placeholder.style.cssText = [
+					'width:300px', 'max-width:100%', 'height:300px',
+					'border-radius:50%', 'display:flex', 'align-items:center',
+					'justify-content:center', 'background:rgba(128,128,128,0.15)',
+					'border:2px dashed rgba(128,128,128,0.4)', 'font-size:1em',
+					'color:#888', 'font-style:italic', 'box-sizing:border-box', 'margin:0 auto'
+				].join(';');
+				placeholder.textContent = 'Profile Picture';
+				img.parentElement.replaceWith(placeholder);
+			}
+
+			function revealPage() {
+				if (window._scrollFromBottom) {
+					// Jump to bottom first, reveal, then animate up to top.
+					requestAnimationFrame(function () {
+						var startPos = document.body.scrollHeight;
+						window.scrollTo(0, startPos);
+						document.documentElement.style.visibility = 'visible';
+
+						var duration = 900;
+						var startTime = null;
+
+						function animate(currentTime) {
+							if (startTime === null) startTime = currentTime;
+							var elapsed = currentTime - startTime;
+							var progress = Math.min(elapsed / duration, 1);
+							window.scrollTo(0, startPos * (1 - easeInOutCubic(progress)));
+							if (elapsed < duration) requestAnimationFrame(animate);
+						}
+
+						requestAnimationFrame(animate);
+					});
+				} else {
+					document.documentElement.style.visibility = 'visible';
+				}
+			}
+
 			// Script is at end of body so DOM is already ready.
-			// Use rAF to ensure layout is complete before reading scrollHeight.
-			requestAnimationFrame(function () {
-				var startPos = document.body.scrollHeight;
-				window.scrollTo(0, startPos);
-				document.documentElement.style.visibility = 'visible';
+			var profileImg = document.querySelector('img.hoverZoomLink');
 
-				var duration = 900;
-				var startTime = null;
+			if (!profileImg) {
+				revealPage();
+				return;
+			}
 
-				function easeInOutCubic(t) {
-					return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+			if (profileImg.complete) {
+				if (profileImg.naturalWidth > 0) {
+					revealPage();
+				} else {
+					showPlaceholder(profileImg);
+					revealPage();
 				}
+				return;
+			}
 
-				function animate(currentTime) {
-					if (startTime === null) startTime = currentTime;
-					var elapsed = currentTime - startTime;
-					var progress = Math.min(elapsed / duration, 1);
-					window.scrollTo(0, startPos * (1 - easeInOutCubic(progress)));
-					if (elapsed < duration) requestAnimationFrame(animate);
-				}
+			var done = false;
+			var timeoutId = null;
 
-				requestAnimationFrame(animate);
-			});
-		}
+			function onLoad() {
+				if (done) return;
+				done = true;
+				clearTimeout(timeoutId);
+				revealPage();
+			}
+
+			function onError() {
+				if (done) return;
+				done = true;
+				clearTimeout(timeoutId);
+				showPlaceholder(profileImg);
+				revealPage();
+			}
+
+			function onTimeout() {
+				if (done) return;
+				done = true;
+				showPlaceholder(profileImg);
+				revealPage();
+			}
+
+			profileImg.addEventListener('load', onLoad);
+			profileImg.addEventListener('error', onError);
+			timeoutId = setTimeout(onTimeout, 5000);
+		})();
 	</script>
 
 	<site-footer></site-footer>
